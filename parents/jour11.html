@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour11">
+
+  <header class="entete">
+
+     <div class="destination">
+      Japon • Nara
+    </div>
+
+    <h1>
+      Nara — temples, cerfs & Naramachi
+    </h1>
+
+    <div class="date">
+      Mardi 27 octobre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour10.html">
+        ← Jour 10
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 11 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour12.html">
+        Jour 12 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+    <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Nara</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🦌</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Temples → Parc → Naramachi</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚆</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Kintetsu + JR + métro</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Kyoto</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <!-- ==================================================
+             MATIN - OSAKA → NARA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Osaka → Nara</h3>
+
+            <p>
+              Métro jusqu'à Namba puis Kintetsu vers Nara avant la visite de Kōfuku-ji
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - VALORE KITAHORIE -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h00
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              Départ vers Yotsubashi Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- VALORE → YOTSUBASHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J11-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Yotsubashi Station
+            </strong>
+
+            <span>
+              Valore Kitahorie → Yotsubashi Y14
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- YOTSUBASHI → NAMBA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J11-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h00 – 09h15
+            </span>
+
+            <strong>
+              Yotsubashi Y14 → Namba Y15
+            </strong>
+
+            <span>
+              Direction Nishi-Umeda
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Yotsubashi Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 21</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAMBA METRO → OSAKA-NAMBA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J11-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T03')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Correspondance vers Kintetsu
+            </strong>
+
+            <span>
+              Namba Y15 → Osaka-Namba A01
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- OSAKA-NAMBA → KINTETSU-NARA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="5"
+          data-trajet="J11-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Kintetsu
+            </span>
+
+            <span class="heure-badge">
+              09h30 – 10h10
+            </span>
+
+            <strong>
+              Osaka-Namba A01 → Kintetsu-Nara A28
+            </strong>
+
+            <span>
+              Direction Kintetsu-Nara
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Kintetsu Nara Line</span>
+              <span class="badge">⚡ Limited / Rapid</span>
+              <span class="badge">⏱ 40 min</span>
+              <span class="badge">🚪 Sortie 2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KINTETSU-NARA → KOFUKU-JI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J11-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Kōfuku-ji
+            </strong>
+
+            <span>
+              Kintetsu-Nara Station → Kōfuku-ji
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOFUKU-JI -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              10h30 – 11h15
+            </span>
+
+            <strong>
+              Kōfuku-ji
+            </strong>
+
+            <span>
+              Chū-kondō et enceinte du temple
+            </span>
+
+          </div>
+
+        </div>
+
+
+          <!-- ==================================================
+             FIN DE MATINEE - NARA PARK & TODAI-JI
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée
+            </span>
+
+            <h3>Nara Park & Tōdai-ji</h3>
+
+            <p>
+              Promenade parmi les cerfs, déjeuner de kakinoha-zushi puis visite du Daibutsuden
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOFUKU-JI → NARA PARK -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J11-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers Nara Park
+            </strong>
+
+            <span>
+              Kōfuku-ji → Parc de Nara
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NARA PARK -->
+
+        <div class="etape etape-carte carte-parc etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-parc">🦌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-parc">
+              Parc
+            </span>
+
+            <span class="heure-badge">
+              11h15 – 12h15
+            </span>
+
+            <strong>
+              Nara Park
+            </strong>
+
+            <span>
+              Promenade dans le parc parmi les cerfs Sika en liberté
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NARA PARK → IZASA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J11-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Izasa
+            </strong>
+
+            <span>
+              Nara Park → Izasa
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER IZASA -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h15 – 13h15
+            </span>
+
+            <strong>
+              Izasa
+            </strong>
+
+            <span>
+              Déjeuner de kakinoha-zushi, spécialité de Nara
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍣 Kakinoha-zushi</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IZASA → TODAI-JI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          data-trajet="J11-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Tōdai-ji
+            </strong>
+
+            <span>
+              Izasa → Tōdai-ji
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TODAI-JI -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              13h15 – 14h15
+            </span>
+
+            <strong>
+              Tōdai-ji
+            </strong>
+
+            <span>
+              Visite du Daibutsuden et du Grand Bouddha
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 7,20 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+          <!-- ==================================================
+             APRES-MIDI - KASUGA TAISHA & NARAMACHI
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Kasuga Taisha & Naramachi</h3>
+
+            <p>
+              Sanctuaire aux lanternes puis découverte du quartier traditionnel de Naramachi
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- TODAI-JI → KASUGA TAISHA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="10"
+          data-trajet="J11-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <span class="heure-badge">
+              14h15 – 14h35
+            </span>
+
+            <strong>
+              Tōdai-ji → Kasuga Taisha
+            </strong>
+
+            <span>
+              Marche à travers le secteur du parc de Nara
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⏱ 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KASUGA TAISHA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏮</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Sanctuaire
+            </span>
+
+            <span class="heure-badge">
+              14h35 – 15h35
+            </span>
+
+            <strong>
+              Kasuga Taisha
+            </strong>
+
+            <span>
+              Visite du sanctuaire et promenade sur le célèbre chemin des lanternes
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KASUGA TAISHA → NARAMACHI -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="11"
+          data-trajet="J11-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <span class="heure-badge">
+              15h35 – 16h05
+            </span>
+
+            <strong>
+              Kasuga Taisha → Naramachi
+            </strong>
+
+            <span>
+              Marche vers le quartier traditionnel
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NARAMACHI -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏘️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier traditionnel
+            </span>
+
+            <span class="heure-badge">
+              16h05 – 17h00
+            </span>
+
+            <strong>
+              Naramachi
+            </strong>
+
+            <span>
+              Découverte des ruelles et maisons traditionnelles du vieux Nara
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NARAMACHI → NARA STATION -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="12"
+          data-trajet="J11-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <span class="heure-badge">
+              17h00 – 17h30
+            </span>
+
+            <strong>
+              Naramachi → Nara Station JR-D21
+            </strong>
+
+            <span>
+              Retour à pied vers la gare JR de Nara
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             SOIREE - NARA → KYOTO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Nara → Kyoto</h3>
+
+            <p>
+              JR Nara Line jusqu'à Kyoto puis métro vers Shijo et installation à l'hôtel
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NARA → KYOTO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="13"
+          data-trajet="J11-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              17h40 – 18h40
+            </span>
+
+            <strong>
+              Nara JR-D21 → Kyoto JR-D01
+            </strong>
+
+            <span>
+              Direction JR-Kyoto
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR Nara Line</span>
+              <span class="badge">⚡ Rapid</span>
+              <span class="badge">⏱ 1 h</span>
+              <span class="badge">🚪 Central Gate</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KYOTO JR → KYOTO METRO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="14"
+          data-trajet="J11-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Correspondance vers Kyoto Metro
+            </strong>
+
+            <span>
+              Kyoto JR-D01 → Kyoto K11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KYOTO → SHIJO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="15"
+          data-trajet="J11-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T14')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              18h50 – 18h55
+            </span>
+
+            <strong>
+              Kyoto K11 → Shijo K09
+            </strong>
+
+            <span>
+              Direction Kokusaikaikan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Karasuma Line</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🚪 Sortie 5</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIJO → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="16"
+          data-trajet="J11-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J11-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers RESI STAY KUON
+            </strong>
+
+            <span>
+              Shijo Station K09 → hôtel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="16"
+          onclick="selectionnerEtape(this); allerAuLieu(16)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <span class="heure-badge">
+              19h05 et +
+            </span>
+
+            <strong>
+              RESI STAY KUON
+            </strong>
+
+            <span>
+              Installation à l'hôtel puis dîner
+            </span>
+
+            <span>
+              357 Wakuyacho Nakagyo, Kyoto
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

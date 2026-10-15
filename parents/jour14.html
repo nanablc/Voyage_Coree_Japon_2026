@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour14">
+
+  <header class="entete">
+
+     <div class="destination">
+      Japon • Tokyo
+    </div>
+
+    <h1>
+      Tokyo — Tsukiji, Ginza, Harajuku & Shinjuku
+    </h1>
+
+    <div class="date">
+      Vendredi 30 octobre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour13.html">
+        ← Jour 13
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 14 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour15.html">
+        Jour 15 →
+      </a>
+
+    </nav>
+
+  </header>
+
+   <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Tokyo</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🗼</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Tsukiji → Ginza → Harajuku → Shinjuku</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚈</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR Yamanote + Hibiya + Ginza Line</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Tokyo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <!-- ==================================================
+             MATIN - NEGISHI → TSUKIJI
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Negishi → Tsukiji</h3>
+
+            <p>
+              JR Yamanote jusqu'à Akihabara puis métro Hibiya vers le marché extérieur de Tsukiji
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - HEBERGEMENT NEGISHI -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h00
+            </span>
+
+            <strong>
+              Hébergement – Negishi
+            </strong>
+
+            <span>
+              3-chōme-24-18 Negishi, Taito City
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → UGUISUDANI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J14-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Uguisudani Station
+            </strong>
+
+            <span>
+              Hébergement → Uguisudani JY06
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UGUISUDANI → AKIHABARA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="3"
+          data-trajet="J14-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              09h00 – 09h10
+            </span>
+
+            <strong>
+              Uguisudani JY06 → Akihabara JY03
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AKIHABARA → TSUKIJI -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="4"
+          data-trajet="J14-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h15 – 09h30
+            </span>
+
+            <strong>
+              Akihabara H16 → Tsukiji H11
+            </strong>
+
+            <span>
+              Direction Naka-meguro
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Hibiya Line</span>
+              <span class="badge">🔄 Correspondance JR → métro</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 1</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TSUKIJI STATION → OUTER MARKET -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="5"
+          data-trajet="J14-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Tsukiji Outer Market
+            </strong>
+
+            <span>
+              Tsukiji H11, sortie 1 → marché extérieur
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TSUKIJI OUTER MARKET -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🦐</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Marché
+            </span>
+
+            <span class="heure-badge">
+              09h30 – 11h30
+            </span>
+
+            <strong>
+              Tsukiji Outer Market
+            </strong>
+
+            <span>
+              Découverte du marché extérieur, spécialités japonaises et stands de produits de la mer
+            </span>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             FIN DE MATINEE & MIDI - TSUKIJI → GINZA → OMOTESANDO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée & midi
+            </span>
+
+            <h3>Tsukiji → Ginza → Omotesandō</h3>
+
+            <p>
+              Promenade jusqu'à Ginza, shopping à GINZA SIX, déjeuner tonkatsu puis métro vers Omotesandō
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- TSUKIJI → GINZA SIX -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="6"
+          data-trajet="J14-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <span class="heure-badge">
+              11h30 – 12h00
+            </span>
+
+            <strong>
+              Tsukiji → Ginza
+            </strong>
+
+            <span>
+              Promenade vers Ginza, avenue de luxe et shopping
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GINZA SIX -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Shopping
+            </span>
+
+            <strong>
+              GINZA SIX
+            </strong>
+
+            <span>
+              Découverte du complexe commercial et de l'avenue de Ginza
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GINZA SIX → GINZA BAIRIN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J14-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Ginza Bairin
+            </strong>
+
+            <span>
+              GINZA SIX → Ginza Bairin
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER GINZA BAIRIN -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h00 – 12h45
+            </span>
+
+            <strong>
+              Ginza Bairin
+            </strong>
+
+            <span>
+              Déjeuner à Ginza
+            </span>
+
+            <div class="badges">
+              <span class="badge">🐷 Tonkatsu</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GINZA BAIRIN → GINZA STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J14-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Ginza Station
+            </strong>
+
+            <span>
+              Ginza Bairin → Ginza G09
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GINZA → OMOTESANDO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="9"
+          data-trajet="J14-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T08')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              12h45 – 13h15
+            </span>
+
+            <strong>
+              Ginza G09 → Omotesandō G02
+            </strong>
+
+            <span>
+              Direction Shibuya
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Ginza Line</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">🚪 Sortie A2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOTESANDO STATION → OMOTESANDO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="10"
+          data-trajet="J14-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Début de la promenade à Omotesandō
+            </strong>
+
+            <span>
+              Omotesandō G02, sortie A2 → avenue Omotesandō
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOTESANDO -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🎀</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier
+            </span>
+
+            <span class="heure-badge">
+              13h15
+            </span>
+
+            <strong>
+              Omotesandō
+            </strong>
+
+            <span>
+              Début de la promenade Omotesandō → Harajuku → Meiji Jingū
+            </span>
+
+          </div>
+
+        </div>
+  
+         <!-- ==================================================
+             APRES-MIDI - HARAJUKU → SHINJUKU
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Omotesandō → Harajuku → Shinjuku</h3>
+
+            <p>
+              Promenade dans Omotesandō et Harajuku, Takeshita Street, Meiji Jingū puis JR Yamanote vers Shinjuku
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOTESANDO → TAKESHITA STREET -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="11"
+          data-trajet="J14-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Omotesandō → Takeshita Street
+            </strong>
+
+            <span>
+              Shopping et promenade à travers Omotesandō et Harajuku
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🛍️ Shopping</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TAKESHITA STREET -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🎀</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Rue commerçante
+            </span>
+
+            <strong>
+              Takeshita Street
+            </strong>
+
+            <span>
+              Rue emblématique de Harajuku, boutiques de mode et culture kawaii
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TAKESHITA STREET → MEIJI JINGU -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="12"
+          data-trajet="J14-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Takeshita Street → Meiji Jingū
+            </strong>
+
+            <span>
+              Transition de l'animation de Harajuku vers le sanctuaire et sa forêt
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MEIJI JINGU -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu(12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Sanctuaire
+            </span>
+
+            <span class="heure-badge">
+              Jusqu'à 16h15
+            </span>
+
+            <strong>
+              Meiji Jingū
+            </strong>
+
+            <span>
+              Visite du sanctuaire shinto et promenade dans la forêt de Meiji
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MEIJI JINGU → HARAJUKU STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="13"
+          data-trajet="J14-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T12')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Harajuku Station
+            </strong>
+
+            <span>
+              Meiji Jingū → Harajuku JY19
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HARAJUKU → SHINJUKU -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="14"
+          data-trajet="J14-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              16h15 – 16h25
+            </span>
+
+            <strong>
+              Harajuku JY19 → Shinjuku JY17
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🚪 Sortie ouest</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU STATION → SHINJUKU -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J14-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Début de la visite de Shinjuku
+            </strong>
+
+            <span>
+              Shinjuku JY17, sortie ouest → quartier de Shinjuku
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="15"
+          onclick="selectionnerEtape(this); allerAuLieu(15)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏙️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 18h45
+            </span>
+
+            <strong>
+              Shinjuku
+            </strong>
+
+            <span>
+              Exploration du quartier avec possibilité de monter à l'observatoire du Tokyo Metropolitan Government Building
+            </span>
+
+            <div class="badges">
+              <span class="badge">🌆 Shinjuku</span>
+              <span class="badge">🔭 Observatoire en option</span>
+            </div>
+
+          </div>
+
+        </div>  
+		
+          <!-- ==================================================
+             FIN D'APRES-MIDI & SOIREE - SHINJUKU
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi & soir
+            </span>
+
+            <h3>Shinjuku & Omoide Yokocho</h3>
+
+            <p>
+              Exploration de Shinjuku avec observatoire en option, dîner à Omoide Yokocho puis retour à Negishi
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU → OMOIDE YOKOCHO - OPTION DIRECTE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J14-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Option directe vers Omoide Yokocho
+            </strong>
+
+            <span>
+              Shinjuku → Omoide Yokocho • sans observatoire
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU → TOKYO METROPOLITAN GOVERNMENT BUILDING -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="16"
+          data-trajet="J14-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T16')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Option
+            </span>
+
+            <strong>
+              Shinjuku → Tokyo Metropolitan Government Building
+            </strong>
+
+            <span>
+              Détour vers l'observatoire si le temps le permet
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🔭 Observatoire</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKYO METROPOLITAN GOVERNMENT BUILDING -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="16"
+          onclick="selectionnerEtape(this); allerAuLieu(16)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🔭</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Observatoire
+            </span>
+
+            <strong>
+              Tokyo Metropolitan Government Building
+            </strong>
+
+            <span>
+              Vue panoramique sur Tokyo • visite optionnelle selon le temps disponible
+            </span>
+
+            <div class="badges">
+              <span class="badge">⭐ Optionnel</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OBSERVATOIRE → OMOIDE YOKOCHO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J14-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Omoide Yokocho
+            </strong>
+
+            <span>
+              Tokyo Metropolitan Government Building → Omoide Yokocho
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOIDE YOKOCHO -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              18h45 et +
+            </span>
+
+            <strong>
+              Omoide Yokocho
+            </strong>
+
+            <span>
+              Dîner dans les petites ruelles de Shinjuku
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍢 Yakitori</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOIDE YOKOCHO → SHINJUKU STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="18"
+          data-trajet="J14-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Shinjuku Station
+            </strong>
+
+            <span>
+              Omoide Yokocho → Shinjuku JY17
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU → UGUISUDANI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="19"
+          data-trajet="J14-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T19')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <strong>
+              Shinjuku JY17 → Uguisudani JY06
+            </strong>
+
+            <span>
+              Sens horaire • direction Ikebukuro / Ueno
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">🕐 Clockwise</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UGUISUDANI → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="20"
+          data-trajet="J14-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J14-T20')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à l'hébergement
+            </strong>
+
+            <span>
+              Uguisudani JY06 → Negishi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL TOKYO -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="20"
+          onclick="selectionnerEtape(this); allerAuLieu(20)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Hébergement – Negishi
+            </strong>
+
+            <span>
+              3-chōme-24-18 Negishi, Taito City
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>
