@@ -1,0 +1,11 @@
+{
+  "name": "Voyage Corée du Sud & Japon 2026",
+  "short_name": "Corée Japon",
+  "description": "Itinéraire interactif Corée du Sud et Japon 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#2563EB",
+  "lang": "fr"
+}
