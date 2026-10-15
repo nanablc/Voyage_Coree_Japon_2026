@@ -9,6 +9,39 @@ if (!jour) {
 }
 
 const dossierDonnees = `Data/${jour}`;
+
+// ======================================================
+// MODE HORS LIGNE / PWA
+// ======================================================
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener(
+    "load",
+    function() {
+
+      navigator.serviceWorker
+        .register("./sw.js")
+        .then(function() {
+
+          console.log(
+            "Mode hors ligne activé."
+          );
+
+        })
+        .catch(function(error) {
+
+          console.error(
+            "Erreur Service Worker :",
+            error
+          );
+
+        });
+
+    }
+  );
+
+}
 // ======================================================
 // EMOJIS SVG COHERENTS
 // ======================================================
