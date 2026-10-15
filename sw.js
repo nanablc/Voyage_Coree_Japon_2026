@@ -46,6 +46,8 @@ const donnees =
 
 const fichiers = [
 
+  "./manifest.webmanifest",
+
   "./css/style.css",
 
   "./js/app.js",
