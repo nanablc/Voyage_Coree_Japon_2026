@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour01">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Séoul
+    </div>
+
+    <h1>
+      Arrivée à Séoul
+    </h1>
+
+    <div class="date">
+      Samedi 17 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <span class="nav-jour nav-desactive">
+        ← Jour précédent
+      </span>
+
+      <span class="compteur-jour">
+        JOUR 1 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour02.html">
+        Jour 2 →
+      </a>
+
+    </nav>
+
+  </header>
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Séoul</strong>
+      </div>
+    </div>
+
+    <div class="resume-item">
+      <span class="resume-icone">✈️</span>
+
+      <div>
+        <span class="resume-label">Arrivée</span>
+        <strong>Incheon</strong>
+      </div>
+    </div>
+
+    <div class="resume-item">
+      <span class="resume-icone">🚆</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>AREX + métro</strong>
+      </div>
+    </div>
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Wool Stay</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Départ
+            </span>
+
+            <h3>Vols vers Séoul</h3>
+
+            <p>
+              Arrivée en Corée du Sud
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- VOLS -->
+
+        <div class="etape">
+          <div class="heure">
+            <span class="pastille-etape pastille-avion">✈️</span>
+          </div>
+
+          <div class="details">
+            <strong>Vol Toulouse → Paris → Séoul</strong>
+            <span>TLS → CDG → ICN</span>
+          </div>
+        </div>
+
+        <div class="etape">
+          <div class="heure">
+            <span class="pastille-etape pastille-avion">✈️</span>
+          </div>
+
+          <div class="details">
+            <strong>Tokyo Narita → Séoul Incheon</strong>
+            <span>NRT → ICN • arrivée prévue à 18h55</span>
+          </div>
+        </div>
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Arrivée
+            </span>
+
+            <h3>Incheon</h3>
+
+            <p>
+              Formalités, cash et carte T-money
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- ARRIVEE INCHEON -->
+
+        <div class="etape etape-carte carte-arrivee etape-cliquable"
+          data-lieu="1" onclick="selectionnerEtape(this); allerAuLieu(1)">
+          <div class="heure">
+            <span class="pastille-etape pastille-avion">✈️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-arrivee">
+              Arrivée
+            </span>
+
+            <span class="heure-badge">
+              21h45
+            </span>
+
+            <strong>
+              Arrivée à l'aéroport de Séoul Incheon
+            </strong>
+
+            <span>💵 Retirer du cash</span>
+
+            <span>
+              💳 Carte T-money : 4 $ vide + env. 20 $ de recharge
+            </span>
+
+            <span>
+              Disponible dans Apple Wallet • machine T-money :
+              espèces seulement
+            </span>
+          </div>
+        </div>
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Transfert
+            </span>
+
+            <h3>Aéroport → Séoul</h3>
+
+            <p>
+              AREX puis métro jusqu'à Hyehwa
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- MARCHE DANS INCHEON VERS AREX -->
+
+        <div class="etape-liaison etape-cliquable" data-trajet="J01-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J01-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre l'AREX
+            </strong>
+
+            <span>
+              Marche dans l'aéroport d'Incheon
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHOIX AREX -->
+
+        <div class="choix-transport">
+
+          <div class="choix-entete">
+            <strong>🚆 Incheon → Seoul Station</strong>
+            <span>Choisir selon l'heure d'arrivée</span>
+          </div>
+
+
+          <!-- PLAN A -->
+
+          <div class="option-transport option-prioritaire etape-cliquable"
+            data-trajet="J01-T02"
+            onclick="selectionnerEtape(this); allerAuTrajet('J01-T02')">
+
+            <div class="option-lettre">A</div>
+
+            <div class="option-titre">
+              <strong>AREX Express</strong>
+              <span class="statut statut-prioritaire">PRIORITAIRE</span>
+            </div>
+
+            <span>Train direct vers Seoul Station</span>
+
+            <div class="badges">
+              <span class="badge badge-train">⏱ 55 min</span>
+              <span class="badge badge-train">💰 13,40 $</span>
+              <span class="badge badge-important">🕙 Dernier
+                22h40</span>
+            </div>
+
+            <span>
+              À Seoul Station : sortie 2 → métro ligne ❹
+            </span>
+
+          </div>
+
+
+          <!-- PLAN B -->
+
+          <div class="option-transport etape-cliquable" data-trajet="J01-T03"
+            onclick="selectionnerEtape(this); allerAuTrajet('J01-T03')">
+
+            <div class="option-lettre">B</div>
+
+            <div class="option-titre">
+              <strong>AREX All-Stop</strong>
+              <span class="statut statut-alternative">ALTERNATIVE</span>
+            </div>
+
+            <span>Incheon → Seoul Station</span>
+
+            <div class="badges">
+              <span class="badge badge-train">⏱ Environ
+                1h10</span>
+            </div>
+
+            <span>
+              À Seoul Station : sortie 2 → métro ligne ❹
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- CORRESPONDANCE DANS SEOUL STATION -->
+
+        <div class="etape-liaison etape-cliquable" data-trajet="J01-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J01-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Correspondance à Seoul Station
+            </strong>
+
+            <span>
+              AREX → métro ligne ❹
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- METRO -->
+
+        <div
+          class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-trajet="J01-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J01-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <strong>Seoul Station 426 → Hyehwa 420</strong>
+
+            <span>Direction Danggogae / Nowon</span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ Environ 10 min</span>
+              <span class="badge">🚪 Sortie 4</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- MARCHE HYEHWA → WOOL STAY -->
+
+        <div
+          class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-trajet="J01-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J01-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <strong>Hyehwa Station → Wool Stay</strong>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 Marche</span>
+            </div>
+
+          </div>
+
+          </div>
+
+          <div class="section-programme">
+
+            <div class="section-programme-contenu">
+
+              <span class="section-programme-label">
+                Installation
+              </span>
+
+              <h3>Hyehwa</h3>
+
+              <p>
+                Snack puis installation à Wool Stay
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- SNACK -->
+
+          <div class="etape etape-carte carte-repas etape-cliquable"
+            data-lieu="6" onclick="selectionnerEtape(this); allerAuLieu(6)">
+            <div class="heure">
+              <span class="pastille-etape pastille-repas">🍽️</span>
+            </div>
+
+            <div class="details">
+              <span class="type-etape type-repas">
+                Snack
+              </span>
+              <strong>7-Eleven</strong>
+              <span>Night snack</span>
+            </div>
+          </div>
+
+
+          <!-- HOTEL -->
+
+          <div class="etape etape-carte carte-hotel etape-cliquable"
+            data-lieu="5" onclick="selectionnerEtape(this); allerAuLieu(5)">
+            <div class="heure">
+              <span class="pastille-etape pastille-hotel">🛏️</span>
+            </div>
+
+            <div class="details">
+              <span class="type-etape type-hotel">
+                Hébergement
+              </span>
+              <strong>Wool Stay</strong>
+              <span>
+                41-8 Daehak-ro 11-gil
+              </span>
+              <span>
+                Jongno District
+              </span>
+
+            </div>
+          </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

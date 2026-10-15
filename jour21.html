@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour21">
+
+  <header class="entete">
+
+    <div class="destination">
+      Japon • Tokyo — Sugamo & Odaiba
+    </div>
+
+    <h1>
+      Tokyo — Jizo-dori, Odaiba & dernière soirée à Ikebukuro
+    </h1>
+
+    <div class="date">
+      Vendredi 6 novembre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour20.html">
+        ← Jour 20
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 21 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour22.html">
+        Jour 22 →
+      </a>
+
+    </nav>
+
+  </header>
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Sugamo → Odaiba → Ikebukuro</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🌉</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Jizo-dori → Odaiba Marine Park → Gundam → Ikebukuro</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚝</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR Yamanote + Yurikamome</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Road Papk Hotel • Sugamo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+  
+          <!-- ==================================================
+             MATIN & MIDI - SUGAMO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin & midi
+            </span>
+
+            <h3>Sugamo — Jizo-dori & déjeuner</h3>
+
+            <p>
+              Matinée tranquille à Sugamo avec promenade sur Jizo-dori puis déjeuner chez Tokiwa Shokudo
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - ROAD PAPK HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h30
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SUGAMO JIZO-DORI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J21-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Sugamo Jizo-dori
+            </strong>
+
+            <span>
+              Road Papk Hotel → Sugamo Jizo-dori
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO JIZO-DORI -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="2"
+          onclick="selectionnerEtape(this); allerAuLieu(2)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏮</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Promenade
+            </span>
+
+            <span class="heure-badge">
+              09h30 – 11h00
+            </span>
+
+            <strong>
+              Sugamo Jizo-dori
+            </strong>
+
+            <span>
+              Promenade tranquille dans la rue commerçante traditionnelle de Sugamo
+            </span>
+
+            <div class="badges">
+              <span class="badge">🏮 Rue commerçante</span>
+              <span class="badge">🚶 Promenade</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- JIZO-DORI → TOKIWA SHOKUDO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="3"
+          data-trajet="J21-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T02')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Tokiwa Shokudo
+            </strong>
+
+            <span>
+              Sugamo Jizo-dori → Tokiwa Shokudo
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKIWA SHOKUDO -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="3"
+          onclick="selectionnerEtape(this); allerAuLieu(3)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              11h30 – 12h30
+            </span>
+
+            <strong>
+              Tokiwa Shokudo
+            </strong>
+
+            <span>
+              Déjeuner tranquille à Sugamo avant de partir pour Odaiba
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍽️ Déjeuner</span>
+              <span class="badge">📍 Sugamo</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKIWA SHOKUDO → SUGAMO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J21-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T03')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Sugamo Station
+            </strong>
+
+            <span>
+              Tokiwa Shokudo → Sugamo JY11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → SHIMBASHI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="5"
+          data-trajet="J21-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              13h00 – 13h20
+            </span>
+
+            <strong>
+              Sugamo JY11 → Shimbashi JY29
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 20 min</span>
+              <span class="badge">🚪 Karasumori / Yurikamome Transfer</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIMBASHI → ODAIBA-KAIHINKOEN -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="6"
+          data-trajet="J21-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚝</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Yurikamome
+            </span>
+
+            <span class="heure-badge">
+              13h25 – 13h43
+            </span>
+
+            <strong>
+              Shimbashi U01 → Odaiba-kaihinkoen U07
+            </strong>
+
+            <span>
+              Direction Toyosu
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚝 Yurikamome Line</span>
+              <span class="badge">🤖 Automated Train / Local</span>
+              <span class="badge">⏱ 18 min</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             APRES-MIDI - ODAIBA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Odaiba — baie de Tokyo, Gundam & shopping</h3>
+
+            <p>
+              Promenade au bord de la baie, DiverCity, Gundam Unicorn puis Fuji TV en option et shopping à Aqua City ou DECKS
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ODAIBA-KAIHINKOEN → ODAIBA MARINE PARK -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J21-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Odaiba Marine Park
+            </strong>
+
+            <span>
+              Odaiba-kaihinkoen U07 → Odaiba Marine Park
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ODAIBA MARINE PARK -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌉</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Parc
+            </span>
+
+            <span class="heure-badge">
+              13h45 – 14h30
+            </span>
+
+            <strong>
+              Odaiba Marine Park
+            </strong>
+
+            <span>
+              Promenade sur le front de mer avec vue sur le Rainbow Bridge
+            </span>
+
+            <div class="badges">
+              <span class="badge">🌉 Rainbow Bridge</span>
+              <span class="badge">🗽 Statue de la Liberté</span>
+              <span class="badge">🌊 Baie de Tokyo</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARINE PARK → DIVERCITY -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="8"
+          data-trajet="J21-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Déplacement
+            </span>
+
+            <strong>
+              Marche vers DiverCity Tokyo Plaza
+            </strong>
+
+            <span>
+              Odaiba Marine Park → DiverCity Tokyo Plaza
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DIVERCITY TOKYO PLAZA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Shopping
+            </span>
+
+            <span class="heure-badge">
+              14h30 – 15h30
+            </span>
+
+            <strong>
+              DiverCity Tokyo Plaza
+            </strong>
+
+            <span>
+              Shopping à DiverCity et découverte du secteur central d'Odaiba
+            </span>
+
+            <div class="badges">
+              <span class="badge">🛍️ Shopping</span>
+              <span class="badge">🤖 Gundam</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DIVERCITY → GUNDAM -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          data-trajet="J21-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers le Gundam Unicorn
+            </strong>
+
+            <span>
+              DiverCity Tokyo Plaza → Gundam RX-0 Unicorn
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GUNDAM RX-0 UNICORN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🤖</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Statue
+            </span>
+
+            <span class="heure-badge">
+              14h30 – 15h30
+            </span>
+
+            <strong>
+              Statue du Gundam RX-0 Unicorn
+            </strong>
+
+            <span>
+              Découverte de la statue grandeur nature devant DiverCity Tokyo Plaza
+            </span>
+
+            <div class="badges">
+              <span class="badge">🤖 RX-0 Unicorn</span>
+              <span class="badge">📸 Photo</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GUNDAM → FUJI TV -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="10"
+          data-trajet="J21-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Option
+            </span>
+
+            <strong>
+              Marche vers Fuji TV Building
+            </strong>
+
+            <span>
+              Gundam RX-0 Unicorn → Fuji TV Building
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⭐ Optionnel</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FUJI TV BUILDING -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">📺</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Optionnel
+            </span>
+
+            <span class="heure-badge">
+              15h30 – 16h30
+            </span>
+
+            <strong>
+              Fuji TV Building
+            </strong>
+
+            <span>
+              Visite du célèbre bâtiment de Fuji TV et de sa sphère argentée suspendue
+            </span>
+
+            <div class="badges">
+              <span class="badge">📺 Fuji TV</span>
+              <span class="badge">⚪ Sphère argentée</span>
+              <span class="badge">🎟️ 7,10 $</span>
+              <span class="badge">⭐ Optionnel</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             SHOPPING - CHOIX A OU B
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              16h30 – 18h00
+            </span>
+
+            <h3>Shopping — Aqua City ou DECKS Tokyo Beach</h3>
+
+            <p>
+              Choisir l'un des deux centres commerciaux avant de reprendre le Yurikamome vers Shimbashi
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- FUJI TV → AQUA CITY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J21-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Aqua City Odaiba
+            </strong>
+
+            <span>
+              Fuji TV Building → Aqua City Odaiba • Option A
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GUNDAM → AQUA CITY SANS FUJI TV -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J21-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T12')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Aqua City sans passer par Fuji TV
+            </strong>
+
+            <span>
+              Gundam RX-0 Unicorn → Aqua City Odaiba
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- AQUA CITY ODAIBA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Option A
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 18h00
+            </span>
+
+            <strong>
+              Aqua City Odaiba
+            </strong>
+
+            <span>
+              Option shopping avant le retour vers Shimbashi
+            </span>
+
+            <div class="badges">
+              <span class="badge">🛍️ Shopping</span>
+              <span class="badge">🅰️ Option A</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FUJI TV → DECKS -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="12"
+          data-trajet="J21-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers DECKS Tokyo Beach
+            </strong>
+
+            <span>
+              Fuji TV Building → DECKS Tokyo Beach • Option B
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GUNDAM → DECKS SANS FUJI TV -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="12"
+          data-trajet="J21-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              DECKS sans passer par Fuji TV
+            </strong>
+
+            <span>
+              Gundam RX-0 Unicorn → DECKS Tokyo Beach
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DECKS TOKYO BEACH -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu(12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Option B
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 18h00
+            </span>
+
+            <strong>
+              DECKS Tokyo Beach
+            </strong>
+
+            <span>
+              Alternative à Aqua City pour la dernière session shopping à Odaiba
+            </span>
+
+            <div class="badges">
+              <span class="badge">🛍️ Shopping</span>
+              <span class="badge">🅱️ Option B</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AQUA CITY → ODAIBA-KAIHINKOEN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="13"
+          data-trajet="J21-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Odaiba-kaihinkoen Station
+            </strong>
+
+            <span>
+              Aqua City Odaiba → Odaiba-kaihinkoen U07
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DECKS → ODAIBA-KAIHINKOEN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="13"
+          data-trajet="J21-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Odaiba-kaihinkoen Station
+            </strong>
+
+            <span>
+              DECKS Tokyo Beach → Odaiba-kaihinkoen U07
+            </span>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             FIN D'APRES-MIDI & SOIREE - ODAIBA → IKEBUKURO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi & soirée
+            </span>
+
+            <h3>Odaiba → Shimbashi → Ikebukuro</h3>
+
+            <p>
+              Retour en Yurikamome puis JR Yamanote vers Ikebukuro pour le dernier dîner et une dernière session shopping
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ODAIBA-KAIHINKOEN → SHIMBASHI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="14"
+          data-trajet="J21-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T16')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚝</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Yurikamome
+            </span>
+
+            <span class="heure-badge">
+              18h05 – 18h23
+            </span>
+
+            <strong>
+              Odaiba-kaihinkoen U07 → Shimbashi U01
+            </strong>
+
+            <span>
+              Direction Shimbashi
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚝 Yurikamome Line</span>
+              <span class="badge">🤖 Automated Train / Local</span>
+              <span class="badge">⏱ 18 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIMBASHI → IKEBUKURO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="15"
+          data-trajet="J21-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T17')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              18h30 – 18h55
+            </span>
+
+            <strong>
+              Shimbashi JY29 → Ikebukuro JY13
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 25 min</span>
+              <span class="badge">🚪 Sortie Est</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IKEBUKURO STATION → FURIN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="16"
+          data-trajet="J21-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Fūrin
+            </strong>
+
+            <span>
+              Ikebukuro JY13 • Sortie Est → Fūrin
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FURIN -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="16"
+          onclick="selectionnerEtape(this); allerAuLieu(16)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dernier dîner
+            </span>
+
+            <span class="heure-badge">
+              18h55 et +
+            </span>
+
+            <strong>
+              Izakaya - Japanese food Yakitori and Sake Fūrin
+            </strong>
+
+            <span>
+              Dernier dîner à Tokyo dans un izakaya animé à Ikebukuro
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍢 Yakitori</span>
+              <span class="badge">🍶 Saké</span>
+              <span class="badge">🏮 Izakaya</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FURIN → ANIMATE IKEBUKURO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J21-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T19')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Animate Ikebukuro
+            </strong>
+
+            <span>
+              Fūrin → Animate Ikebukuro
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ANIMATE IKEBUKURO -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Shopping
+            </span>
+
+            <strong>
+              Animate Ikebukuro
+            </strong>
+
+            <span>
+              Dernière session shopping à Ikebukuro avant de rentrer à Sugamo
+            </span>
+
+            <div class="badges">
+              <span class="badge">🛍️ Shopping</span>
+              <span class="badge">🎌 Anime & manga</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ANIMATE → IKEBUKURO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="18"
+          data-trajet="J21-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T20')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Ikebukuro Station
+            </strong>
+
+            <span>
+              Animate Ikebukuro → Ikebukuro JY13
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- IKEBUKURO → SUGAMO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="19"
+          data-trajet="J21-T21"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T21')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <strong>
+              Ikebukuro JY13 → Sugamo JY11
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">🌙 Retour après la soirée</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → ROAD PAPK HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="20"
+          data-trajet="J21-T22"
+          onclick="selectionnerEtape(this); allerAuTrajet('J21-T22')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour au Road Papk Hotel
+            </strong>
+
+            <span>
+              Sugamo JY11 → Road Papk Hotel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROAD PAPK HOTEL - NUIT -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="20"
+          onclick="selectionnerEtape(this); allerAuLieu(20)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

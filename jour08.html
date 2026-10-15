@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour08">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud → Japon
+    </div>
+
+    <h1>
+      Busan → Osaka — Transition Corée / Japon
+    </h1>
+
+    <div class="date">
+      Samedi 24 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour07.html">
+        ← Jour 7
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 8 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour09.html">
+        Jour 9 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">🌏</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Busan → Osaka</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">✈️</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Transition Corée → Japon</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚆</span>
+
+      <div>
+        <span class="resume-label">Transports</span>
+        <strong>Métro + avion + train</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Osaka</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section carte-section-split">
+
+        <div class="carte-voyage carte-coree">
+
+          <div class="carte-voyage-entete">
+            <span>🇰🇷</span>
+
+            <div>
+              <strong>Corée du Sud</strong>
+              <span>Busan → Gimhae Airport</span>
+            </div>
+          </div>
+
+          <div id="map-coree" class="map-split"></div>
+
+        </div>
+
+
+        <div class="carte-voyage carte-japon">
+
+          <div class="carte-voyage-entete">
+            <span>🇯🇵</span>
+
+            <div>
+              <strong>Japon</strong>
+              <span>Kansai Airport → Osaka</span>
+            </div>
+          </div>
+
+          <div id="map-japon" class="map-split"></div>
+
+        </div>
+
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+ 
+         <!-- ==================================================
+             MATIN - COREE
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin • Corée
+            </span>
+
+            <h3>Busan → Gimhae Airport</h3>
+
+            <p>
+              Départ de l'hébergement puis métro et Busan-Gimhae LRT jusqu'à l'aéroport
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - HEBERGEMENT BUSAN -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-carte="coree"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu('coree', 1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h00
+            </span>
+
+            <strong>
+              Hébergement Busan
+            </strong>
+
+            <span>
+              Préparation, check-out puis départ vers Bujeon Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEBERGEMENT → BUJEON -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="coree"
+          data-lieu="2"
+          data-trajet="J08-K-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('coree', 'J08-K-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Bujeon Station
+            </strong>
+
+            <span>
+              Hébergement Busan → Bujeon Station 120
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUJEON → SEOMYEON -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-carte="coree"
+          data-lieu="3"
+          data-trajet="J08-K-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('coree', 'J08-K-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h15 – 09h20
+            </span>
+
+            <strong>
+              Bujeon 120 → Seomyeon 119
+            </strong>
+
+            <span>
+              Direction Dadaepo Beach
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❶ Ligne 1</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEOMYEON → SASANG -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-carte="coree"
+          data-lieu="4"
+          data-trajet="J08-K-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('coree', 'J08-K-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h20 – 09h35
+            </span>
+
+            <strong>
+              Seomyeon 219 → Sasang 227
+            </strong>
+
+            <span>
+              Direction Yangsan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❷ Ligne 2</span>
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SASANG → GIMHAE AIRPORT -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-carte="coree"
+          data-lieu="5"
+          data-trajet="J08-K-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('coree', 'J08-K-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              LRT
+            </span>
+
+            <span class="heure-badge">
+              09h35 – 10h00
+            </span>
+
+            <strong>
+              Sasang → Gimhae International Airport
+            </strong>
+
+            <span>
+              Busan-Gimhae Light Rail Transit
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Busan-Gimhae LRT</span>
+              <span class="badge">⏱ 25 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             TRANSITION COREE → JAPON
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi • Corée → Japon
+            </span>
+
+            <h3>Busan → Osaka</h3>
+
+            <p>
+              Vol depuis Gimhae International Airport puis arrivée à Kansai International Airport
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- VOL BUSAN → OSAKA -->
+
+        <div class="etape etape-carte carte-arrivee">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-avion">✈️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-arrivee">
+              Vol
+            </span>
+
+            <span class="heure-badge">
+              13h00 – 14h30
+            </span>
+
+            <strong>
+              Busan → Osaka
+            </strong>
+
+            <span>
+              Gimhae International Airport → Kansai International Airport
+            </span>
+
+            <div class="badges">
+              <span class="badge">✈️ Corée du Sud → Japon</span>
+              <span class="badge">⏱ 1 h 30</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             ARRIVEE AU JAPON
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi • Japon
+            </span>
+
+            <h3>Kansai Airport → Osaka</h3>
+
+            <p>
+              Arrivée au Japon puis train Nankai vers Namba et installation à Kitahorie
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- KANSAI INTERNATIONAL AIRPORT -->
+
+        <div class="etape etape-carte carte-arrivee etape-cliquable"
+          data-carte="japon"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-avion">🇯🇵</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-arrivee">
+              Arrivée au Japon
+            </span>
+
+            <span class="heure-badge">
+              14h30
+            </span>
+
+            <strong>
+              Kansai International Airport
+            </strong>
+
+            <span>
+              Arrivée à Osaka, immigration puis récupération des bagages
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KIX → KANSAI AIRPORT STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="japon"
+          data-lieu="2"
+          data-trajet="J08-J-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Kansai Airport Station
+            </strong>
+
+            <span>
+              Terminal → gare Nankai NK32
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHOIX KIX → NAMBA
+             ================================================== -->
+
+        <div class="choix-transport">
+
+          <div class="choix-entete">
+
+            <strong>
+              🚆 Kansai Airport → Namba
+            </strong>
+
+            <span>
+              Deux options avec la compagnie Nankai
+            </span>
+
+          </div>
+
+
+          <!-- PLAN A - RAPI:T -->
+
+          <div class="option-transport option-prioritaire etape-cliquable"
+            data-carte="japon"
+            data-lieu="3"
+            data-trajet="J08-J-T02"
+            onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T02')">
+
+            <span class="option-lettre">
+              A
+            </span>
+
+            <div class="option-titre">
+
+              <strong>
+                Nankai Rapi:t
+              </strong>
+
+              <span class="statut statut-prioritaire">
+                CONSEILLÉ
+              </span>
+
+            </div>
+
+            <span>
+              15h35 – 16h14 • Kansai Airport NK32 → Namba NK01
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Rapi:t</span>
+              <span class="badge">⏱ 39 min</span>
+              <span class="badge">💳 12,75 $</span>
+              <span class="badge">🚪 Sortie 24 / Namba Walk B2</span>
+            </div>
+
+          </div>
+
+
+          <!-- PLAN B - AIRPORT EXPRESS -->
+
+          <div class="option-transport etape-cliquable"
+            data-carte="japon"
+            data-lieu="3"
+            data-trajet="J08-J-T03"
+            onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T03')">
+
+            <span class="option-lettre">
+              B
+            </span>
+
+            <div class="option-titre">
+
+              <strong>
+                Nankai Airport Express
+              </strong>
+
+              <span class="statut statut-alternative">
+                ALTERNATIVE
+              </span>
+
+            </div>
+
+            <span>
+              15h39 – 16h29 • Kansai Airport NK32 → Namba NK01
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Airport Express</span>
+              <span class="badge">⏱ 50 min</span>
+              <span class="badge">💳 10 $</span>
+              <span class="badge">🚪 Sortie 24 / Namba Walk B2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             NAMBA → HOTEL
+             ================================================== -->
+
+        <div class="choix-transport">
+
+          <div class="choix-entete">
+
+            <strong>
+              🧳 Namba → Valore Kitahorie
+            </strong>
+
+            <span>
+              À pied normalement, métro si fatigue
+            </span>
+
+          </div>
+
+
+          <!-- PLAN A - MARCHE -->
+
+          <div class="option-transport option-prioritaire etape-cliquable"
+            data-carte="japon"
+            data-lieu="6"
+            data-trajet="J08-J-T04"
+            onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T04')">
+
+            <span class="option-lettre">
+              A
+            </span>
+
+            <div class="option-titre">
+
+              <strong>
+                Marche jusqu'à l'hôtel
+              </strong>
+
+              <span class="statut statut-prioritaire">
+                NORMAL
+              </span>
+
+            </div>
+
+            <span>
+              Namba Station → Valore Kitahorie
+            </span>
+
+          </div>
+
+
+          <!-- PLAN B - METRO SI FATIGUE -->
+
+          <div class="option-transport etape-cliquable"
+            data-carte="japon"
+            data-lieu="6"
+            data-lieux="4 5 6"
+            data-trajet="J08-J-T05"
+            data-trajets="J08-J-T05 J08-J-T06 J08-J-T07"
+            onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T05')">
+
+            <span class="option-lettre">
+              B
+            </span>
+
+            <div class="option-titre">
+
+              <strong>
+                Métro si fatigue
+              </strong>
+
+              <span class="statut statut-alternative">
+                SI FATIGUE
+              </span>
+
+            </div>
+
+            <span>
+              Namba Nankai → Namba Y15 → Yotsubashi Y14 → hôtel
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Yotsubashi Line</span>
+              <span class="badge">⏱ env. 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- INSTALLATION HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-carte="japon"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hôtel
+            </span>
+
+            <span class="heure-badge">
+              16h50
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              Installation et dépôt des bagages
+            </span>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             OSAKA - UMEDA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi • Osaka
+            </span>
+
+            <h3>Kitahorie → Umeda</h3>
+
+            <p>
+              Départ de l'hôtel puis métro vers Umeda pour l'observatoire et le dîner
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → YOTSUBASHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="japon"
+          data-lieu="7"
+          data-trajet="J08-J-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Yotsubashi Station
+            </strong>
+
+            <span>
+              Valore Kitahorie → Yotsubashi Y14
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- YOTSUBASHI → NISHI-UMEDA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-carte="japon"
+          data-lieu="8"
+          data-trajet="J08-J-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              17h15 – 17h30
+            </span>
+
+            <strong>
+              Yotsubashi Y14 → Nishi-Umeda Y11
+            </strong>
+
+            <span>
+              Direction Nishi-Umeda
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Yotsubashi Line</span>
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NISHI-UMEDA → UMEDA SKY BUILDING -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="japon"
+          data-lieu="9"
+          data-trajet="J08-J-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Umeda Sky Building
+            </strong>
+
+            <span>
+              Nishi-Umeda Station → Umeda Sky Building
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UMEDA SKY BUILDING -->
+
+        <div class="etape etape-carte carte-observatoire etape-cliquable"
+          data-carte="japon"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-observatoire">🔭</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-observatoire">
+              Observatoire
+            </span>
+
+            <span class="heure-badge">
+              18h00 – 19h15
+            </span>
+
+            <strong>
+              Umeda Sky Building
+            </strong>
+
+            <span>
+              Observatoire Kuchu Teien et panorama sur Osaka
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 18 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER TAKIMI-KOJI -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-carte="japon"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              19h20 – 20h30
+            </span>
+
+            <strong>
+              Kiji - Takimi-koji
+            </strong>
+
+            <span>
+              Okonomiyaki chez Kiji, au pied de l'Umeda Sky Building
+            </span>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             SOIREE A UMEDA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir • Osaka
+            </span>
+
+            <h3>Umeda → Kitahorie</h3>
+
+            <p>
+              Après le dîner, retour direct ou prolongation de la soirée à HEP FIVE et Gate Tower Building
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHOIX APRES LE DINER
+             ================================================== -->
+
+        <div class="choix-transport">
+
+          <div class="choix-entete">
+
+            <strong>
+              🌙 Après le dîner
+            </strong>
+
+            <span>
+              Retour direct ou soirée prolongée à Umeda
+            </span>
+
+          </div>
+
+
+          <!-- PLAN A - RETOUR DIRECT -->
+
+          <div class="option-transport option-prioritaire etape-cliquable"
+            data-carte="japon"
+            data-trajet="J08-J-T11"
+            onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T11')">
+
+            <span class="option-lettre">
+              A
+            </span>
+
+            <div class="option-titre">
+
+              <strong>
+                Retour direct vers Nishi-Umeda
+              </strong>
+
+              <span class="statut statut-prioritaire">
+                RETOUR
+              </span>
+
+            </div>
+
+            <span>
+              Kiji - Takimi-koji → Nishi-Umeda Station
+            </span>
+
+          </div>
+
+
+          <!-- PLAN B - HEP FIVE + GATE TOWER -->
+
+          <div class="option-transport etape-cliquable"
+            data-carte="japon"
+            data-trajet="J08-J-T12"
+            onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T12')">
+
+            <span class="option-lettre">
+              B
+            </span>
+
+            <div class="option-titre">
+
+              <strong>
+                Continuer la soirée à Umeda
+              </strong>
+
+              <span class="statut statut-alternative">
+                OPTION
+              </span>
+
+            </div>
+
+            <span>
+              HEP FIVE → Gate Tower Building → Nishi-Umeda
+            </span>
+
+            <div class="badges">
+              <span class="badge">🎡 HEP FIVE</span>
+              <span class="badge">🏙️ Gate Tower Building</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEP FIVE -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-carte="japon"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🎡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Option
+            </span>
+
+            <span class="heure-badge">
+              20h45 et +
+            </span>
+
+            <strong>
+              HEP FIVE
+            </strong>
+
+            <span>
+              Grande roue et ambiance nocturne d'Umeda
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 9 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEP FIVE → GATE TOWER BUILDING -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="japon"
+          data-lieu="12"
+          data-trajet="J08-J-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Gate Tower Building
+            </strong>
+
+            <span>
+              HEP FIVE → Gate Tower Building
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GATE TOWER BUILDING -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-carte="japon"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏙️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Option
+            </span>
+
+            <strong>
+              Gate Tower Building
+            </strong>
+
+            <span>
+              Passage devant le célèbre immeuble traversé par une autoroute
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GATE TOWER → NISHI-UMEDA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="japon"
+          data-lieu="13"
+          data-trajet="J08-J-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Nishi-Umeda Station
+            </strong>
+
+            <span>
+              Gate Tower Building → Nishi-Umeda Y11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NISHI-UMEDA → YOTSUBASHI -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-carte="japon"
+          data-lieu="14"
+          data-trajet="J08-J-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <strong>
+              Nishi-Umeda Y11 → Yotsubashi Y14
+            </strong>
+
+            <span>
+              Direction Suminoekoen
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Yotsubashi Line</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🚪 Sortie 6</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- YOTSUBASHI → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-carte="japon"
+          data-lieu="15"
+          data-trajet="J08-J-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('japon', 'J08-J-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Valore Kitahorie
+            </strong>
+
+            <span>
+              Yotsubashi Station → hôtel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-carte="japon"
+          data-lieu="15"
+          onclick="selectionnerEtape(this); allerAuLieu('japon', 15)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              1-chōme-5 Kitahorie, Nishi Ward, Osaka
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app_jour08.js"></script>
+
+</body>
+
+</html>

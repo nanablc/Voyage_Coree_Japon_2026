@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour03">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Séoul & Gapyeong
+    </div>
+
+    <h1>
+      Excursion à Nami Island
+    </h1>
+
+    <div class="date">
+      Lundi 19 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour02.html">
+        ← Jour 2
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 3 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour04.html">
+        Jour 4 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Gapyeong</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏝️</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Nami Island & jardin</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚌</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Bus d'excursion</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Wool Stay</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Hyehwa → Dongdaemun</h3>
+
+            <p>
+              Départ de Wool Stay puis rendez-vous pour l'excursion à Nami Island
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEBUT DE JOURNEE - WOOL STAY -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h30
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              Préparation puis départ pour le point de rendez-vous de l'excursion
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE WOOL STAY → HYEHWA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J03-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hyehwa Station • 5 min
+            </strong>
+
+            <span>
+              Wool Stay → Hyehwa 420
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO HYEHWA → DONGDAEMUN -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J03-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              08h40 – 08h45
+            </span>
+
+            <strong>
+              Hyehwa 420 → Dongdaemun 421
+            </strong>
+
+            <span>
+              Direction Oido
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🚪 Sortie 10</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DONGDAEMUN STATION → SORTIE 10 -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J03-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T03')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre la sortie 10 • 5 min
+            </strong>
+
+            <span>
+              Point de rendez-vous pour le bus d'excursion
+            </span>
+
+          </div>
+
+        </div>
+        <!-- ==================================================
+             EXCURSION - NAMI ISLAND
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Excursion
+            </span>
+
+            <h3>Nami Island & Garden of Morning Calm</h3>
+
+            <p>
+              Départ en bus depuis Dongdaemun pour une journée à Gapyeong
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUS DONGDAEMUN → NAMI ISLAND -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-trajet="J03-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus d'excursion
+            </span>
+
+            <span class="heure-badge">
+              09h10 – 10h40
+            </span>
+
+            <strong>
+              Dongdaemun → Nami Island
+            </strong>
+
+            <span>
+              Départ depuis le point de rendez-vous de la sortie 10
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Excursion</span>
+              <span class="badge">⏱ 90 min</span>
+              <span class="badge">💰 70 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAMI ISLAND -->
+
+        <div class="etape etape-carte carte-ile etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-ile">🏝️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-ile">
+              Île
+            </span>
+
+            <span class="heure-badge">
+              10h40
+            </span>
+
+            <strong>
+              Nami Island
+            </strong>
+
+            <span>
+              Promenade sur l'île, paysages et temps libre
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAMI ISLAND → GARDEN OF MORNING CALM -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-trajet="J03-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Transfert
+            </span>
+
+            <strong>
+              Nami Island → Garden of Morning Calm
+            </strong>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Bus d'excursion</span>
+              <span class="badge">⏱ 40 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GARDEN OF MORNING CALM -->
+
+        <div class="etape etape-carte carte-jardin etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-jardin">🌿</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-jardin">
+              Jardin
+            </span>
+
+            <strong>
+              Garden of Morning Calm
+            </strong>
+
+            <span>
+              Jardin paysager et promenade
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             RETOUR A SEOUL
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Retour
+            </span>
+
+            <h3>Gapyeong → Séoul</h3>
+
+            <p>
+              Retour en bus d'excursion vers Dongdaemun
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUS GARDEN OF MORNING CALM → DONGDAEMUN -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-lieu="7"
+          data-trajet="J03-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus d'excursion
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 19h30
+            </span>
+
+            <strong>
+              Garden of Morning Calm → Dongdaemun
+            </strong>
+
+            <span>
+              Retour à Séoul
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Retour</span>
+              <span class="badge">⏱ env. 80 min de route</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             RETOUR A HYEHWA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Dongdaemun → Hyehwa</h3>
+
+            <p>
+              Retour en métro puis dîner tranquille à Daehak-ro
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO DONGDAEMUN → HYEHWA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="8"
+          data-trajet="J03-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              19h40 – 19h45
+            </span>
+
+            <strong>
+              Dongdaemun 421 → Hyehwa 420
+            </strong>
+
+            <span>
+              Direction Jinjeop
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🚪 Sortie 4</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HYEHWA → BAMBOO PORK BELLY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J03-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Bamboo Pork Belly • 3 min
+            </strong>
+
+            <span>
+              Hyehwa Station → Daehak-ro
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              20h00 et +
+            </span>
+
+            <strong>
+              Bamboo Pork Belly
+            </strong>
+
+            <span>
+              Soirée tranquille à Daehak-ro
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BAMBOO PORK BELLY → WOOL STAY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J03-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J03-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Wool Stay • 6 min
+            </strong>
+
+            <span>
+              Bamboo Pork Belly → Wool Stay
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              41-8 Daehak-ro 11-gil, Jongno District
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

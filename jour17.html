@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour17">
+
+  <header class="entete">
+
+    <div class="destination">
+      Japon • Hakone
+    </div>
+
+    <h1>
+      Hakone — Owakudani, lac Ashi, sanctuaire & onsen
+    </h1>
+
+    <div class="date">
+      Lundi 2 novembre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour16.html">
+        ← Jour 16
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 17 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour18.html">
+        Jour 18 →
+      </a>
+
+    </nav>
+
+  </header>
+
+   <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Tokyo → Hakone</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🌋</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Owakudani → Lac Ashi → Hakone-jinja → Onsen</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚡</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Romancecar + Tozan + Cablecar + Ropeway + bateau + bus</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Road Papk Hotel • Sugamo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+  
+        <!-- ==================================================
+             MATIN - SUGAMO → HAKONE
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Sugamo → Hakone</h3>
+
+            <p>
+              JR Yamanote jusqu'à Shinjuku puis Romancecar vers Hakone-Yumoto et Hakone Tozan Railway jusqu'à Gora
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - ROAD PAPK HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              06h30
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+            <div class="badges">
+              <span class="badge">🎫 Hakone Free Pass • 66 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SUGAMO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J17-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Sugamo Station
+            </strong>
+
+            <span>
+              Road Papk Hotel → Sugamo JY11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → SHINJUKU -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="3"
+          data-trajet="J17-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              07h30 – 07h50
+            </span>
+
+            <strong>
+              Sugamo JY11 → Shinjuku JY17
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU → HAKONE-YUMOTO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="4"
+          data-trajet="J17-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Romancecar
+            </span>
+
+            <span class="heure-badge">
+              08h11 – 09h53
+            </span>
+
+            <strong>
+              Shinjuku OH01 → Hakone-Yumoto OH51
+            </strong>
+
+            <span>
+              Direction Hakone-Yumoto
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Odakyū Odawara Line</span>
+              <span class="badge">💺 Romancecar</span>
+              <span class="badge">⏱ 1 h 42</span>
+              <span class="badge">🎟️ A/R 20,45 $</span>
+              <span class="badge">🎫 Hakone Free Pass • 66 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE-YUMOTO → GORA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="5"
+          data-trajet="J17-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚃</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Train de montagne
+            </span>
+
+            <span class="heure-badge">
+              10h00 – 10h40
+            </span>
+
+            <strong>
+              Hakone-Yumoto OH51 → Gora OH57
+            </strong>
+
+            <span>
+              Direction Gora
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚃 Hakone Tozan Railway</span>
+              <span class="badge">⏱ 40 min</span>
+              <span class="badge">🎫 Hakone Free Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+          <!-- ==================================================
+             FIN DE MATINEE - GORA → OWAKUDANI → TOGENDAI
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée
+            </span>
+
+            <h3>Gora → Owakudani → Togendai</h3>
+
+            <p>
+              Hakone Tozan Cablecar puis Ropeway jusqu'à la vallée volcanique d'Owakudani avant de redescendre vers le lac Ashi
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- GORA → SOUNZAN -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="6"
+          data-trajet="J17-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Cablecar
+            </span>
+
+            <span class="heure-badge">
+              10h45 – 10h55
+            </span>
+
+            <strong>
+              Gora OH57 → Sounzan OH62
+            </strong>
+
+            <span>
+              Direction Sounzan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚡 Hakone Tozan Cablecar</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🎫 Hakone Free Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SOUNZAN → OWAKUDANI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="7"
+          data-trajet="J17-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Ropeway
+            </span>
+
+            <span class="heure-badge">
+              11h00 – 11h10
+            </span>
+
+            <strong>
+              Sounzan OH62 → Owakudani OH63
+            </strong>
+
+            <span>
+              Direction Togendai
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚡 Hakone Ropeway</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🎫 Hakone Free Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OWAKUDANI -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Vallée volcanique
+            </span>
+
+            <span class="heure-badge">
+              11h10 – 12h10
+            </span>
+
+            <strong>
+              Owakudani
+            </strong>
+
+            <span>
+              Découverte de la vallée volcanique, des fumerolles et du paysage montagneux de Hakone
+            </span>
+
+            <div class="badges">
+              <span class="badge">🌋 Activité volcanique</span>
+              <span class="badge">🥚 Kuro-tamago</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OWAKUDANI → TOGENDAI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="8"
+          data-trajet="J17-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Ropeway
+            </span>
+
+            <span class="heure-badge">
+              12h15 – 12h30
+            </span>
+
+            <strong>
+              Owakudani OH63 → Togendai OH65
+            </strong>
+
+            <span>
+              Direction Togendai
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚡 Hakone Ropeway</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🎫 Hakone Free Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+  
+          <!-- ==================================================
+             MIDI & DEBUT D'APRES-MIDI - LAC ASHI & HAKONE-JINJA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi & début d'après-midi
+            </span>
+
+            <h3>Lac Ashi & Hakone-jinja</h3>
+
+            <p>
+              Croisière en Bateau Pirate sur le lac Ashi, déjeuner à Moto-Hakone puis visite du sanctuaire Hakone-jinja
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOGENDAI → MOTO-HAKONE-KO -->
+
+        <div class="etape etape-carte carte-ferry transport transport-ferry etape-cliquable"
+          data-lieu="9"
+          data-trajet="J17-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T08')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-ferry">⛴️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-ferry">
+              Croisière
+            </span>
+
+            <span class="heure-badge">
+              12h30 – 13h10
+            </span>
+
+            <strong>
+              Togendai OH65 → Moto-Hakone-ko OH67
+            </strong>
+
+            <span>
+              Traversée du lac Ashi en Bateau Pirate
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-ferry">⛴️ Hakone Sightseeing Cruise</span>
+              <span class="badge">⏱ 40 min</span>
+              <span class="badge">🎫 Hakone Free Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MOTO-HAKONE-KO → KINUHIKI NO SATO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="10"
+          data-trajet="J17-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre 絹引の里
+            </strong>
+
+            <span>
+              Moto-Hakone-ko OH67 → 絹引の里
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KINUHIKI NO SATO -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              13h10 – 14h10
+            </span>
+
+            <strong>
+              絹引の里
+            </strong>
+
+            <span>
+              Déjeuner à Moto-Hakone
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KINUHIKI NO SATO → HAKONE-JINJA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="11"
+          data-trajet="J17-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              絹引の里 → Hakone-jinja
+            </strong>
+
+            <span>
+              Marche le long du lac Ashi jusqu'au sanctuaire
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🌊 Lac Ashi</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE-JINJA -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Sanctuaire
+            </span>
+
+            <span class="heure-badge">
+              14h10 – 15h10
+            </span>
+
+            <strong>
+              Hakone-jinja
+            </strong>
+
+            <span>
+              Visite du sanctuaire shinto au bord du lac Ashi
+            </span>
+
+            <div class="badges">
+              <span class="badge">⛩️ Torii rouge sur l'eau</span>
+              <span class="badge">🌲 Forêt de cèdres</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE-JINJA → MOTO-HAKONE-KO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="12"
+          data-trajet="J17-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Moto-Hakone-ko
+            </strong>
+
+            <span>
+              Hakone-jinja → Moto-Hakone-ko OH67
+            </span>
+
+          </div>
+
+        </div>
+		
+          <!-- ==================================================
+             APRES-MIDI & SOIREE - ONSEN → TOKYO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi & soirée
+            </span>
+
+            <h3>Moto-Hakone → Onsen → Tokyo</h3>
+
+            <p>
+              Bus vers Hakone-Yumoto, bain à Hakone Yuryo puis retour à Tokyo par la ligne Odakyū et JR Yamanote
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MOTO-HAKONE-KO → HAKONE-YUMOTO -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-lieu="13"
+          data-trajet="J17-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              À partir de 15h10
+            </span>
+
+            <strong>
+              Moto-Hakone-ko OH67 → Hakone-Yumoto OH51
+            </strong>
+
+            <span>
+              Direction Hakone-Yumoto
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Hakone Tozan Bus</span>
+              <span class="badge">🔀 Ligne K ou H</span>
+              <span class="badge">🎫 Hakone Free Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE-YUMOTO → HAKONE YURYO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="14"
+          data-trajet="J17-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T13')">
+
+          <div class="liaison-icone">
+            🚌
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Navette vers Hakone Yuryo
+            </strong>
+
+            <span>
+              Hakone-Yumoto OH51 → Hakone Yuryo • navette gratuite
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE YURYO -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">♨️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Onsen
+            </span>
+
+            <span class="heure-badge">
+              16h55 – 17h15
+            </span>
+
+            <strong>
+              Hakone Yuryo
+            </strong>
+
+            <span>
+              Pause détente dans un onsen traditionnel avant le retour à Tokyo
+            </span>
+
+            <div class="badges">
+              <span class="badge">♨️ Bain onsen</span>
+              <span class="badge">🎟️ 15,10 $</span>
+              <span class="badge">🚌 Navette gratuite</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE YURYO → HAKONE-YUMOTO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J17-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T14')">
+
+          <div class="liaison-icone">
+            🚌
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Hakone-Yumoto
+            </strong>
+
+            <span>
+              Hakone Yuryo → Hakone-Yumoto OH51 • navette gratuite
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAKONE-YUMOTO → SHINJUKU -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="16"
+          data-trajet="J17-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Odakyū
+            </span>
+
+            <span class="heure-badge">
+              17h45 – 19h45
+            </span>
+
+            <strong>
+              Hakone-Yumoto OH51 → Shinjuku OH01
+            </strong>
+
+            <span>
+              Direction Shinjuku
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Odakyū Odawara Line</span>
+              <span class="badge">⏱ 2 h</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINJUKU → SUGAMO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="17"
+          data-trajet="J17-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T16')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              19h45 – 20h05
+            </span>
+
+            <strong>
+              Shinjuku JY17 → Sugamo JY11
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 20 min</span>
+              <span class="badge">🔄 Correspondance Odakyū → JR</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → ROAD PAPK HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="18"
+          data-trajet="J17-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J17-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour au Road Papk Hotel
+            </strong>
+
+            <span>
+              Sugamo JY11 → Road Papk Hotel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROAD PAPK HOTEL - NUIT -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="18"
+          onclick="selectionnerEtape(this); allerAuLieu(18)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

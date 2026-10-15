@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour13">
+
+  <header class="entete">
+
+     <div class="destination">
+      Japon • Kyoto → Tokyo
+    </div>
+
+    <h1>
+      Kyoto — Arashiyama, Kinkaku-ji & Nijō-jō
+    </h1>
+
+    <div class="date">
+      Jeudi 29 octobre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour12.html">
+        ← Jour 12
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 13 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour14.html">
+        Jour 14 →
+      </a>
+
+    </nav>
+
+  </header>
+
+    <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Kyoto → Tokyo</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🎋</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Arashiyama → Kinkaku-ji → Nijō-jō</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚄</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR + Randen + bus + Shinkansen</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Tokyo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <!-- ==================================================
+             MATIN - KYOTO → ARASHIYAMA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Kyoto → Arashiyama</h3>
+
+            <p>
+              Métro jusqu'à Kyoto Station, dépôt des bagages puis JR Sagano Line vers Arashiyama
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - RESI STAY KUON -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              06h15
+            </span>
+
+            <strong>
+              RESI STAY KUON
+            </strong>
+
+            <span>
+              Départ vers Shijō Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SHIJO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J13-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Shijō Station
+            </strong>
+
+            <span>
+              RESI STAY KUON → Shijō K09
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIJO → KYOTO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J13-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              07h10 – 07h15
+            </span>
+
+            <strong>
+              Shijō K09 → Kyoto K11
+            </strong>
+
+            <span>
+              Direction Takeda
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Karasuma Line</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KYOTO METRO → KYOTO JR / COIN LOCKER -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J13-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T03')">
+
+          <div class="liaison-icone">
+            🎒
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Dépôt des bagages & correspondance vers JR
+            </strong>
+
+            <span>
+              Kyoto K11 → Coin Locker → Kyoto JR-E01
+            </span>
+
+            <span>
+              07h20 – 07h35
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KYOTO → SAGA-ARASHIYAMA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="5"
+          data-trajet="J13-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              07h40 – 08h00
+            </span>
+
+            <strong>
+              Kyoto JR-E01 → Saga-Arashiyama JR-E08
+            </strong>
+
+            <span>
+              Direction Kameoka / Sonobe
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR Sagano Line</span>
+              <span class="badge">⏱ 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SAGA-ARASHIYAMA → BAMBOO GROVE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J13-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Bamboo Grove
+            </strong>
+
+            <span>
+              Saga-Arashiyama JR-E08 → Arashiyama Bamboo Grove
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARASHIYAMA BAMBOO GROVE -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🎋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Bambouseraie
+            </span>
+
+            <span class="heure-badge">
+              08h10
+            </span>
+
+            <strong>
+              Arashiyama Bamboo Grove
+            </strong>
+
+            <span>
+              Début de la promenade à travers Arashiyama
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- ==================================================
+             MATINEE - ARASHIYAMA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matinée
+            </span>
+
+            <h3>Arashiyama</h3>
+
+            <p>
+              Bamboo Grove, Tenryū-ji, rivière Katsura et pont Togetsukyō avant le déjeuner
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- BAMBOO GROVE → TENRYU-JI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J13-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers Tenryū-ji
+            </strong>
+
+            <span>
+              Arashiyama Bamboo Grove → Tenryū-ji
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TENRYU-JI -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <strong>
+              Tenryū-ji
+            </strong>
+
+            <span>
+              Visite du temple zen et de ses jardins
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 4,45 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TENRYU-JI → KATSURA RIVER -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J13-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers la rivière Katsura
+            </strong>
+
+            <span>
+              Tenryū-ji → Katsura River
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KATSURA RIVER -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌊</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Rivière
+            </span>
+
+            <strong>
+              Katsura River
+            </strong>
+
+            <span>
+              Promenade au bord de la rivière au cœur d'Arashiyama
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KATSURA RIVER → TOGETSUKYO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          data-trajet="J13-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers Togetsukyō
+            </strong>
+
+            <span>
+              Katsura River → Togetsukyō Bridge
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOGETSUKYO -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌉</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Pont
+            </span>
+
+            <span class="heure-badge">
+              Jusqu'à 10h45
+            </span>
+
+            <strong>
+              Togetsukyō Bridge
+            </strong>
+
+            <span>
+              Pont emblématique d'Arashiyama sur la rivière Katsura
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOGETSUKYO → YOSHIYA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="10"
+          data-trajet="J13-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Yoshiya
+            </strong>
+
+            <span>
+              Togetsukyō Bridge → Yoshiya
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER YOSHIYA -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              10h50 – 11h40
+            </span>
+
+            <strong>
+              Yoshiya
+            </strong>
+
+            <span>
+              Déjeuner à Arashiyama
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍜 Soba / Udon</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- YOSHIYA → RANDEN ARASHIYAMA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J13-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Randen Arashiyama
+            </strong>
+
+            <span>
+              Yoshiya → Randen Arashiyama A13
+            </span>
+
+          </div>
+
+        </div>
+  
+         <!-- ==================================================
+             MIDI & DEBUT D'APRES-MIDI - ARASHIYAMA → NIJO-JO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi & début d'après-midi
+            </span>
+
+            <h3>Arashiyama → Kinkaku-ji → Nijō-jō</h3>
+
+            <p>
+              Randen jusqu'au nord-ouest de Kyoto, visite du Pavillon d'Or puis bus vers Nijō-jō
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- RANDEN ARASHIYAMA → KATABIRANOTSUJI -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="12"
+          data-trajet="J13-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Randen
+            </span>
+
+            <span class="heure-badge">
+              11h45 – 11h55
+            </span>
+
+            <strong>
+              Arashiyama A13 → Katabiranotsuji A8
+            </strong>
+
+            <span>
+              Direction Shijō-Ōmiya
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Randen Arashiyama Main Line</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KATABIRANOTSUJI → KITANO-HAKUBAICHO -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="13"
+          data-trajet="J13-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Randen
+            </span>
+
+            <span class="heure-badge">
+              12h00 – 12h15
+            </span>
+
+            <strong>
+              Katabiranotsuji A8 → Kitano-Hakubaichō B9
+            </strong>
+
+            <span>
+              Direction Kitano-Hakubaichō
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Randen Kitano Line</span>
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KITANO-HAKUBAICHO → KINKAKU-JI -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="14"
+          data-trajet="J13-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <span class="heure-badge">
+              12h15 – 12h30
+            </span>
+
+            <strong>
+              Kitano-Hakubaichō → Kinkaku-ji
+            </strong>
+
+            <span>
+              Marche jusqu'au Pavillon d'Or
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KINKAKU-JI -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              12h30 – 13h20
+            </span>
+
+            <strong>
+              Kinkaku-ji
+            </strong>
+
+            <span>
+              Visite du célèbre Pavillon d'Or et de ses jardins
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 4,45 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KINKAKU-JI → KINKAKU-JI-MICHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J13-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Kinkaku-ji-michi
+            </strong>
+
+            <span>
+              Kinkaku-ji → arrêt du Kyoto City Bus 12
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KINKAKU-JI-MICHI → NIJOJO-MAE -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-lieu="16"
+          data-trajet="J13-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              13h30 – 14h00
+            </span>
+
+            <strong>
+              Kinkaku-ji-michi → Nijojo-mae
+            </strong>
+
+            <span>
+              Direction Nijojo-mae
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Kyoto City Bus 12</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIJOJO-MAE BUS STOP → NIJO-JO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J13-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Nijō-jō
+            </strong>
+
+            <span>
+              Nijojo-mae Bus Stop → Nijō-jō
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIJO-JO -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Château
+            </span>
+
+            <span class="heure-badge">
+              14h00 – 15h45
+            </span>
+
+            <strong>
+              Nijō-jō
+            </strong>
+
+            <span>
+              Visite du château, du Palais Ninomaru et du Palais Honmaru
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 Ninomaru 12 $</span>
+              <span class="badge">💳 Honmaru 9 $</span>
+              <span class="badge">🎟️ Honmaru 14h50</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             APRES-MIDI & SOIREE - KYOTO → TOKYO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi & soir
+            </span>
+
+            <h3>Nijō-jō → Kyoto → Tokyo</h3>
+
+            <p>
+              Métro vers Kyoto Station, récupération des bagages puis Shinkansen jusqu'à Tokyo
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIJO-JO → NIJOJO-MAE STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="18"
+          data-trajet="J13-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Nijojo-mae Station
+            </strong>
+
+            <span>
+              Nijō-jō → Nijojo-mae T14
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIJOJO-MAE → KARASUMA OIKE -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="19"
+          data-trajet="J13-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T18')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              15h55 – 16h00
+            </span>
+
+            <strong>
+              Nijojo-mae T14 → Karasuma Oike T13
+            </strong>
+
+            <span>
+              Direction Rokujizo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Tōzai Line</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KARASUMA OIKE → KYOTO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="20"
+          data-trajet="J13-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T19')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              16h05 – 16h10
+            </span>
+
+            <strong>
+              Karasuma Oike K08 → Kyoto K11
+            </strong>
+
+            <span>
+              Direction Takeda
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Karasuma Line</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🔄 Correspondance T13 → K08</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KYOTO METRO → SHINKANSEN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="21"
+          data-trajet="J13-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T20')">
+
+          <div class="liaison-icone">
+            🎒
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Valises, ekiben & embarquement
+            </strong>
+
+            <span>
+              Kyoto K11 → Coin Locker → Kyoto JR-A31
+            </span>
+
+            <span>
+              16h15 – 17h20
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KYOTO → TOKYO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="22"
+          data-trajet="J13-T21"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T21')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚄</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Shinkansen
+            </span>
+
+            <span class="heure-badge">
+              17h45 – 20h00
+            </span>
+
+            <strong>
+              Kyoto JR-A31 → Tokyo Station
+            </strong>
+
+            <span>
+              Direction Tokyo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚄 Tōkaidō Shinkansen</span>
+              <span class="badge">⚡ Nozomi</span>
+              <span class="badge">⏱ 2 h 15</span>
+              <span class="badge">💳 126 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKYO → UGUISUDANI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="23"
+          data-trajet="J13-T22"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T22')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              20h10 – 20h25
+            </span>
+
+            <strong>
+              Tokyo JY01 → Uguisudani JY06
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie sud</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UGUISUDANI → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="24"
+          data-trajet="J13-T23"
+          onclick="selectionnerEtape(this); allerAuTrajet('J13-T23')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers l'hébergement
+            </strong>
+
+            <span>
+              Uguisudani Station, sortie sud → Negishi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL TOKYO -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="24"
+          onclick="selectionnerEtape(this); allerAuLieu(24)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <span class="heure-badge">
+              Soir
+            </span>
+
+            <strong>
+              Hébergement – Negishi
+            </strong>
+
+            <span>
+              3-chōme-24-18 Negishi, Taito
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

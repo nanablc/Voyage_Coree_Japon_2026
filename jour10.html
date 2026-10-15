@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour10">
+
+  <header class="entete">
+
+     <div class="destination">
+      Japon • Hiroshima & Miyajima
+    </div>
+
+    <h1>
+      Hiroshima & Miyajima — Peace Park & Itsukushima
+    </h1>
+
+    <div class="date">
+      Lundi 26 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour09.html">
+        ← Jour 9
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 10 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour11.html">
+        Jour 11 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+   <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Hiroshima & Miyajima</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">⛩️</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Peace Park → Miyajima</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚄</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Shinkansen + Hiroden + JR + ferry</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Osaka</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <!-- ==================================================
+             MATIN - OSAKA → HIROSHIMA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Osaka → Hiroshima</h3>
+
+            <p>
+              Métro jusqu'à Shin-Osaka puis Shinkansen vers Hiroshima et découverte du Peace Park
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - VALORE KITAHORIE -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              06h00
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              Départ matinal vers Shinsaibashi Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SHINSAIBASHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J10-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Shinsaibashi Station
+            </strong>
+
+            <span>
+              Valore Kitahorie → Shinsaibashi M19
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINSAIBASHI → SHIN-OSAKA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J10-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              06h55 – 07h10
+            </span>
+
+            <strong>
+              Shinsaibashi M19 → Shin-Osaka M13
+            </strong>
+
+            <span>
+              Direction Esaka
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Midosuji Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 1</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIN-OSAKA → HIROSHIMA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="4"
+          data-trajet="J10-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚄</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Shinkansen
+            </span>
+
+            <span class="heure-badge">
+              07h34 – 09h04
+            </span>
+
+            <strong>
+              Shin-Osaka → Hiroshima
+            </strong>
+
+            <span>
+              Direction Hakata / Kagoshima-Chuo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚄 Hikari 731</span>
+              <span class="badge">JR San'yō Shinkansen</span>
+              <span class="badge">⏱ 1 h 30</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIROSHIMA STATION → HIRODEN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="5"
+          data-trajet="J10-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Correspondance vers Hiroden
+            </strong>
+
+            <span>
+              Hiroshima Station → Hiroshima Station Tram Stop M1
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIROSHIMA STATION → GENBAKU DOME-MAE -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="6"
+          data-trajet="J10-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Tram
+            </span>
+
+            <span class="heure-badge">
+              09h10 – 09h30
+            </span>
+
+            <strong>
+              Hiroshima Station M1 → Genbaku Dome-mae M10
+            </strong>
+
+            <span>
+              Direction Hiroden-miyajima-guchi
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Hiroden 2 / 6</span>
+              <span class="badge">⏱ 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GENBAKU DOME-MAE → GENBAKU DOME -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J10-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Accès au Peace Park
+            </strong>
+
+            <span>
+              Genbaku Dome-mae → Genbaku Dome
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PEACE PARK -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🕊️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Peace Park
+            </span>
+
+            <span class="heure-badge">
+              09h30 – 11h30
+            </span>
+
+            <strong>
+              Genbaku Dome
+            </strong>
+
+            <span>
+              Début de la visite du Parc du Mémorial de la Paix
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GENBAKU DOME → PEACE BELL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J10-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers la Cloche de la Paix
+            </strong>
+
+            <span>
+              Genbaku Dome → Peace Bell
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PEACE BELL -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🔔</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Monument
+            </span>
+
+            <strong>
+              Peace Bell
+            </strong>
+
+            <span>
+              Cloche de la Paix
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PEACE BELL → CHILDREN'S PEACE MONUMENT -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          data-trajet="J10-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Children's Peace Monument
+            </strong>
+
+            <span>
+              Peace Bell → Children's Peace Monument
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHILDREN'S PEACE MONUMENT -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🕊️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Monument
+            </span>
+
+            <strong>
+              Children's Peace Monument
+            </strong>
+
+            <span>
+              Monument dédié aux enfants victimes de la bombe atomique et à Sadako Sasaki
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHILDREN'S PEACE MONUMENT → MUSEUM -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="10"
+          data-trajet="J10-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers le Musée du Mémorial
+            </strong>
+
+            <span>
+              Children's Peace Monument → Hiroshima Peace Memorial Museum
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PEACE MEMORIAL MUSEUM -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏛️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Musée
+            </span>
+
+            <strong>
+              Hiroshima Peace Memorial Museum
+            </strong>
+
+            <span>
+              Fin de la visite du Parc du Mémorial de la Paix
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 1,50 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ==================================================
+             MIDI - HIROSHIMA → MIYAJIMA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi
+            </span>
+
+            <h3>Peace Park → Miyajima</h3>
+
+            <p>
+              Déjeuner à Hiroshima puis Hiroden et JR jusqu'à Miyajimaguchi avant la traversée en ferry
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER OKONOMIYAKI -->
+
+        <div class="etape etape-carte carte-repas">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              11h30 – 12h15
+            </span>
+
+            <strong>
+              Okonomiyaki
+            </strong>
+
+            <span>
+              Déjeuner dans le secteur Peace Park / Hondori
+            </span>
+
+            <div class="badges">
+              <span class="badge">🥢 Style Hiroshima</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PEACE MEMORIAL MUSEUM → GENBAKU DOME-MAE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J10-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Genbaku Dome-mae
+            </strong>
+
+            <span>
+              Peace Memorial Museum → Genbaku Dome-mae M10
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GENBAKU DOME-MAE → YOKOGAWA -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="12"
+          data-trajet="J10-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Tram
+            </span>
+
+            <span class="heure-badge">
+              12h20
+            </span>
+
+            <strong>
+              Genbaku Dome-mae → Yokogawa Station
+            </strong>
+
+            <span>
+              Direction Yokogawa Station
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Hiroden 7</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- YOKOGAWA HIRODEN → YOKOGAWA JR -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="13"
+          data-trajet="J10-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T12')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Correspondance Hiroden → JR
+            </strong>
+
+            <span>
+              Yokogawa Station - Hiroden → Yokogawa Station JR-R03
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- YOKOGAWA → MIYAJIMAGUCHI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="14"
+          data-trajet="J10-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              12h40 – 13h05
+            </span>
+
+            <strong>
+              Yokogawa JR-R03 → Miyajimaguchi JR-R10
+            </strong>
+
+            <span>
+              Direction Iwakuni / Ōnoura
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR San'yō Line</span>
+              <span class="badge">⏱ 25 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MIYAJIMAGUCHI STATION → FERRY TERMINAL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J10-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre le terminal ferry
+            </strong>
+
+            <span>
+              Miyajimaguchi Station → Miyajimaguchi Ferry Terminal
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MIYAJIMAGUCHI → MIYAJIMA -->
+
+        <div class="etape etape-carte carte-ferry transport transport-ferry etape-cliquable"
+          data-lieu="16"
+          data-trajet="J10-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-ferry">🚢</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-ferry">
+              Ferry
+            </span>
+
+            <span class="heure-badge">
+              13h30 – 13h40
+            </span>
+
+            <strong>
+              Miyajimaguchi → Miyajima
+            </strong>
+
+            <span>
+              Traversée vers l'île de Miyajima
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-ferry">🚢 JR Miyajima Ferry</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARRIVEE A MIYAJIMA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="16"
+          onclick="selectionnerEtape(this); allerAuLieu(16)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Miyajima
+            </span>
+
+            <span class="heure-badge">
+              13h40
+            </span>
+
+            <strong>
+              Miyajima Ferry Terminal
+            </strong>
+
+            <span>
+              Arrivée sur l'île et début de l'exploration de Miyajima
+            </span>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             APRES-MIDI - MIYAJIMA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Exploration de Miyajima</h3>
+
+            <p>
+              Omotesando, sanctuaire d'Itsukushima et Daisho-in avant le ferry retour
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MIYAJIMA FERRY TERMINAL → OMOTESANDO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J10-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers Omotesando
+            </strong>
+
+            <span>
+              Miyajima Ferry Terminal → Omotesando Shopping Street
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOTESANDO -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏮</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Rue commerçante
+            </span>
+
+            <span class="heure-badge">
+              13h50 – 17h00
+            </span>
+
+            <strong>
+              Omotesando Shopping Street
+            </strong>
+
+            <span>
+              Début de l'exploration de Miyajima
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- OMOTESANDO → ITSUKUSHIMA-JINJA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="18"
+          data-trajet="J10-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Itsukushima-jinja
+            </strong>
+
+            <span>
+              Omotesando Shopping Street → Itsukushima-jinja
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITSUKUSHIMA-JINJA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="18"
+          onclick="selectionnerEtape(this); allerAuLieu(18)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Sanctuaire
+            </span>
+
+            <strong>
+              Itsukushima-jinja
+            </strong>
+
+            <span>
+              Visite du célèbre sanctuaire sur l'eau et de son grand torii
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 2 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITSUKUSHIMA-JINJA → DAISHO-IN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="19"
+          data-trajet="J10-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Daisho-in
+            </strong>
+
+            <span>
+              Itsukushima-jinja → Daisho-in
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DAISHO-IN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="19"
+          onclick="selectionnerEtape(this); allerAuLieu(19)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">☸️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Temple
+            </span>
+
+            <strong>
+              Daisho-in
+            </strong>
+
+            <span>
+              Visite du temple bouddhiste au pied du mont Misen
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DAISHO-IN → MIYAJIMA FERRY TERMINAL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="20"
+          data-trajet="J10-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T19')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers le terminal ferry
+            </strong>
+
+            <span>
+              Daisho-in → Miyajima Ferry Terminal
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MIYAJIMA → MIYAJIMAGUCHI -->
+
+        <div class="etape etape-carte carte-ferry transport transport-ferry etape-cliquable"
+          data-lieu="21"
+          data-trajet="J10-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T20')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-ferry">🚢</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-ferry">
+              Ferry
+            </span>
+
+            <span class="heure-badge">
+              17h10 – 17h20
+            </span>
+
+            <strong>
+              Miyajima → Miyajimaguchi
+            </strong>
+
+            <span>
+              Retour sur le continent
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-ferry">🚢 JR Miyajima Ferry</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARRIVEE MIYAJIMAGUCHI -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="21"
+          onclick="selectionnerEtape(this); allerAuLieu(21)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">⚓</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Terminal ferry
+            </span>
+
+            <span class="heure-badge">
+              17h20
+            </span>
+
+            <strong>
+              Miyajimaguchi Ferry Terminal
+            </strong>
+
+            <span>
+              Arrivée sur le continent et correspondance vers la gare JR
+            </span>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             SOIREE - MIYAJIMA → OSAKA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Miyajima → Osaka</h3>
+
+            <p>
+              Retour à Hiroshima puis Shinkansen vers Shin-Osaka, dîner ramen et retour à l'hôtel
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- FERRY TERMINAL → MIYAJIMAGUCHI STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="22"
+          data-trajet="J10-T21"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T21')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Miyajimaguchi Station
+            </strong>
+
+            <span>
+              Miyajimaguchi Ferry Terminal → Miyajimaguchi JR-R10
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MIYAJIMAGUCHI → HIROSHIMA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="23"
+          data-trajet="J10-T22"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T22')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              17h35 – 18h05
+            </span>
+
+            <strong>
+              Miyajimaguchi JR-R10 → Hiroshima JR-R01
+            </strong>
+
+            <span>
+              Direction Itozaki / Hiroshima
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR San'yō Line</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIROSHIMA → SHIN-OSAKA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="24"
+          data-trajet="J10-T23"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T23')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚄</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Shinkansen
+            </span>
+
+            <span class="heure-badge">
+              18h35 – 20h00
+            </span>
+
+            <strong>
+              Hiroshima → Shin-Osaka
+            </strong>
+
+            <span>
+              Direction Tokyo / Shin-Osaka
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚄 Sakura / Nozomi</span>
+              <span class="badge">JR San'yō Shinkansen</span>
+              <span class="badge">⏱ 1 h 25</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER A SHIN-OSAKA -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="24"
+          onclick="selectionnerEtape(this); allerAuLieu(24)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍜</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              20h15 et +
+            </span>
+
+            <strong>
+              Ramen & Tsukemen
+            </strong>
+
+            <span>
+              Dîner dans le secteur de Shin-Osaka avant le retour à Shinsaibashi
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍜 Ramen</span>
+              <span class="badge">🥢 Tsukemen</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIN-OSAKA → SHINSAIBASHI -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="25"
+          data-trajet="J10-T24"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T24')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <strong>
+              Shin-Osaka M13 → Shinsaibashi M19
+            </strong>
+
+            <span>
+              Direction Nakamozu
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Midosuji Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 7</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINSAIBASHI → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="26"
+          data-trajet="J10-T25"
+          onclick="selectionnerEtape(this); allerAuTrajet('J10-T25')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Valore Kitahorie
+            </strong>
+
+            <span>
+              Shinsaibashi Station → hôtel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="26"
+          onclick="selectionnerEtape(this); allerAuLieu(26)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              1-chōme-5 Kitahorie, Nishi Ward, Osaka
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

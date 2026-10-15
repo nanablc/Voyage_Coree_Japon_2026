@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "lieux",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": "J01-L01", "Ordre": 1, "Nom": "Incheon International Airport", "Type": "Aeroport", "SousType": "AeroportInternational", "Ref": "ICN", "Note": "Arrivée à Séoul", "Affichage": "Permanent" }, "geometry": { "type": "Point", "coordinates": [ 126.450722399183562, 37.449377961872194 ] } },
+{ "type": "Feature", "properties": { "ID": "J01-L02", "Ordre": 2, "Nom": "Gare de Séoul", "Type": "Gare", "SousType": "GareFerroviaire", "Ref": "Seoul Station", "Note": "Arrivée de lAREX", "Affichage": "Permanent" }, "geometry": { "type": "Point", "coordinates": [ 126.970584790057913, 37.554490846041354 ] } },
+{ "type": "Feature", "properties": { "ID": "J01-L03", "Ordre": 3, "Nom": "Seoul Station - Métro", "Type": "Metro", "SousType": "Station", "Ref": "426", "Note": "Métro ligne 4", "Affichage": "Permanent" }, "geometry": { "type": "Point", "coordinates": [ 126.972694679675072, 37.554552006369903 ] } },
+{ "type": "Feature", "properties": { "ID": "J01-L05", "Ordre": 5, "Nom": "Wool Stay", "Type": "Hotel", "SousType": "Hebergement", "Ref": null, "Note": "Hébergement à Séoul", "Affichage": "Permanent" }, "geometry": { "type": "Point", "coordinates": [ 126.999152514244287, 37.582200661702601 ] } },
+{ "type": "Feature", "properties": { "ID": "J01-L04", "Ordre": 4, "Nom": "Hyehwa Station", "Type": "Metro", "SousType": "Station", "Ref": "420", "Note": "Métro ligne 4", "Affichage": "Permanent" }, "geometry": { "type": "Point", "coordinates": [ 127.002044225560567, 37.581388858266827 ] } },
+{ "type": "Feature", "properties": { "ID": "J01-L06", "Ordre": 6, "Nom": "7-Eleven", "Type": "Convenience", "SousType": "Supérette", "Ref": null, "Note": "Snack du soir", "Affichage": "Permanent" }, "geometry": { "type": "Point", "coordinates": [ 126.999923625001173, 37.582089616716573 ] } }
+]
+}

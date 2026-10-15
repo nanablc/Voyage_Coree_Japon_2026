@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour07">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Busan
+    </div>
+
+    <h1>
+      Busan — Gwangalli, Gamcheon, Songdo & Nampo
+    </h1>
+
+    <div class="date">
+      Vendredi 23 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour06.html">
+        ← Jour 6
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 7 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour08.html">
+        Jour 8 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Busan</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🌊</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Gwangalli → Gamcheon → Songdo</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚡</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Métro + bus + téléphérique</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Busan</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Jeonpo → Gwangalli</h3>
+
+            <p>
+              Départ de l'hébergement, métro via Seomyeon puis matinée face au pont Gwangandaegyo
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEBUT DE JOURNEE - HEBERGEMENT BUSAN -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h00
+            </span>
+
+            <strong>
+              Hébergement Busan
+            </strong>
+
+            <span>
+              Préparation puis départ vers Bujeon Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEBERGEMENT → BUJEON -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J07-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Bujeon Station
+            </strong>
+
+            <span>
+              Hébergement Busan → Bujeon Station 120
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUJEON → SEOMYEON -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J07-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h00 – 09h05
+            </span>
+
+            <strong>
+              Bujeon 120 → Seomyeon 119
+            </strong>
+
+            <span>
+              Direction Dadaepo Beach
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❶ Ligne 1</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEOMYEON → GEUMNYEONSAN -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="4"
+          data-trajet="J07-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h10 – 09h25
+            </span>
+
+            <strong>
+              Seomyeon 219 → Geumnyeonsan 210
+            </strong>
+
+            <span>
+              Direction Jangsan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❷ Ligne 2</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 1</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GEUMNYEONSAN → GWANGALLI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J07-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Gwangalli • 10 min
+            </strong>
+
+            <span>
+              Geumnyeonsan Station → Gwangalli Beach
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GWANGALLI BEACH -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌊</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Plage
+            </span>
+
+            <span class="heure-badge">
+              09h35 – 10h30
+            </span>
+
+            <strong>
+              Gwangalli Beach & Gwangandaegyo
+            </strong>
+
+            <span>
+              Promenade sur la plage et vue sur le pont Gwangandaegyo
+            </span>
+
+          </div>
+
+        </div>
+
+
+          <!-- ==================================================
+             GWANGALLI → GAMCHEON
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée
+            </span>
+
+            <h3>Gwangalli → Gamcheon</h3>
+
+            <p>
+              Retour vers Seomyeon puis métro et bus jusqu'au village culturel de Gamcheon
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- GWANGALLI → GEUMNYEONSAN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J07-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Geumnyeonsan Station • 10 min
+            </strong>
+
+            <span>
+              Gwangalli Beach → Geumnyeonsan Station 210
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GEUMNYEONSAN → SEOMYEON -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="7"
+          data-trajet="J07-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              10h40 – 11h00
+            </span>
+
+            <strong>
+              Geumnyeonsan 210 → Seomyeon 219
+            </strong>
+
+            <span>
+              Direction Yangsan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❷ Ligne 2</span>
+              <span class="badge">⏱ 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEOMYEON → TOSEONG -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="8"
+          data-trajet="J07-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              11h05 – 11h30
+            </span>
+
+            <strong>
+              Seomyeon 119 → Toseong 109
+            </strong>
+
+            <span>
+              Direction Dadaepo Beach
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❶ Ligne 1</span>
+              <span class="badge">⏱ 25 min</span>
+              <span class="badge">🚪 Sortie 6</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOSEONG STATION → ARRET DE BUS -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre l'arrêt de bus
+            </strong>
+
+            <span>
+              Toseong Station, sortie 6 → arrêt de bus pour Gamcheon
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUS TOSEONG → GAMCHEON -->
+
+        <div class="etape etape-carte carte-bus transport etape-cliquable"
+          data-lieu="10"
+          data-trajet="J07-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T08')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              11h35 – 12h00
+            </span>
+
+            <strong>
+              Toseong → Gamcheon Culture Village
+            </strong>
+
+            <span>
+              Direction Gamcheon Culture Village
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Saha 1-1 / Seogu 2 / Seogu 2-2</span>
+              <span class="badge">⏱ 25 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- STREET FOOD A GAMCHEON -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h00 – 12h45
+            </span>
+
+            <strong>
+              Street food à Gamcheon
+            </strong>
+
+            <span>
+              Déjeuner libre dans les rues du village
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GAMCHEON CULTURE VILLAGE -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏘️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Village culturel
+            </span>
+
+            <span class="heure-badge">
+              12h45 – 14h45
+            </span>
+
+            <strong>
+              Gamcheon Culture Village
+            </strong>
+
+            <span>
+              Ruelles colorées, Haneul Maru Observatory et statue du Petit Prince et du renard du désert
+            </span>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             GAMCHEON → SONGDO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Gamcheon → Songdo</h3>
+
+            <p>
+              Bus vers Songdo, promenade sur le Skywalk puis traversée en téléphérique
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- GAMCHEON → SINIK APARTMENT -->
+
+        <div class="etape etape-carte carte-bus transport etape-cliquable"
+          data-lieu="11"
+          data-trajet="J07-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              14h45 – 14h55
+            </span>
+
+            <strong>
+              Gamcheon → Sinik Apartment
+            </strong>
+
+            <span>
+              Bus 61
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Bus 61</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SINIK APARTMENT → SONGDO SKYWALK -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J07-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Songdo Skywalk
+            </strong>
+
+            <span>
+              Sinik Apartment → Songdo Skywalk
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SONGDO SKYWALK -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu(12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌊</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Skywalk
+            </span>
+
+            <strong>
+              Songdo Skywalk
+            </strong>
+
+            <span>
+              Promenade sur la passerelle au-dessus de la mer avant le téléphérique
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SKYWALK → CABLE CAR -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="13"
+          data-trajet="J07-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Songdo Marine Cable Car
+            </strong>
+
+            <span>
+              Songdo Skywalk → Songdo Marine Cable Car Office
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SONGDO MARINE CABLE CAR -->
+
+        <div class="etape etape-carte carte-telepherique transport etape-cliquable"
+          data-lieu="14"
+          data-trajet="J07-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-telepherique">🚡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-telepherique">
+              Téléphérique
+            </span>
+
+            <span class="heure-badge">
+              15h30 – 17h00
+            </span>
+
+            <strong>
+              Songdo Marine Cable Car
+            </strong>
+
+            <span>
+              Traversée jusqu'à Songdo Sky Park
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-telepherique">🚡 Songdo Marine Cable Car</span>
+              <span class="badge">💳 17 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             SONGDO → NAMPO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi
+            </span>
+
+            <h3>Songdo → Nampo</h3>
+
+            <p>
+              Bus depuis Amnam Park puis découverte de Yongdusan, Gukje Market et BIFF Square
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- AMNAM PARK -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="15"
+          onclick="selectionnerEtape(this); allerAuLieu(15)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌳</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Parc
+            </span>
+
+            <span class="heure-badge">
+              17h00
+            </span>
+
+            <strong>
+              Amnam Park
+            </strong>
+
+            <span>
+              Fin de la visite de Songdo et départ vers Jagalchi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- AMNAM PARK → JAGALCHI -->
+
+        <div class="etape etape-carte carte-bus transport etape-cliquable"
+          data-lieu="16"
+          data-trajet="J07-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              17h00 – 17h30
+            </span>
+
+            <strong>
+              Amnam Park → Jagalchi Market
+            </strong>
+
+            <span>
+              Direction Jagalchi Market
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Bus 7</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- JAGALCHI → YONGDUSAN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J07-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Yongdusan Park • 10 min
+            </strong>
+
+            <span>
+              Jagalchi Market → Yongdusan Park
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- YONGDUSAN PARK -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌳</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Parc
+            </span>
+
+            <span class="heure-badge">
+              17h40 – 18h10
+            </span>
+
+            <strong>
+              Yongdusan Park
+            </strong>
+
+            <span>
+              Promenade dans le parc au cœur de Nampo
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUSAN TOWER - OPTION -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="18"
+          onclick="selectionnerEtape(this); allerAuLieu(18)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🗼</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Option
+            </span>
+
+            <strong>
+              Busan Tower
+            </strong>
+
+            <span>
+              Option selon le temps et l'envie
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 12,50 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- YONGDUSAN → GUKJE MARKET -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J07-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Gukje Market
+            </strong>
+
+            <span>
+              Yongdusan Park → Gukje Market
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GUKJE MARKET -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="19"
+          onclick="selectionnerEtape(this); allerAuLieu(19)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Marché
+            </span>
+
+            <span class="heure-badge">
+              18h10 – 19h10
+            </span>
+
+            <strong>
+              Gukje Market
+            </strong>
+
+            <span>
+              Marché traditionnel puis promenade vers BIFF Square
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GUKJE MARKET → BIFF SQUARE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J07-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre BIFF Square
+            </strong>
+
+            <span>
+              Gukje Market → BIFF Square
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BIFF SQUARE -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="20"
+          onclick="selectionnerEtape(this); allerAuLieu(20)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🎬</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Place
+            </span>
+
+            <strong>
+              BIFF Square
+            </strong>
+
+            <span>
+              Fin de la promenade dans le quartier de Nampo
+            </span>
+
+          </div>
+
+        </div>
+ 
+         <!-- ==================================================
+             NAMPO → JEONPO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Nampo → Jeonpo</h3>
+
+            <p>
+              Retour en métro vers Seomyeon puis dîner et soirée à Jeonpo Cafe Street
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- BIFF SQUARE → JAGALCHI STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="21"
+          data-trajet="J07-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Jagalchi Station • 10 min
+            </strong>
+
+            <span>
+              BIFF Square → Jagalchi Station 110
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- JAGALCHI → SEOMYEON -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="22"
+          data-trajet="J07-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T18')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              19h20 – 20h00
+            </span>
+
+            <strong>
+              Jagalchi 110 → Seomyeon 119
+            </strong>
+
+            <span>
+              Direction Nopo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❶ Ligne 1</span>
+              <span class="badge">⏱ 40 min</span>
+              <span class="badge">🚪 Sortie 2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEOMYEON → JEONPO CAFE STREET -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="23"
+          data-trajet="J07-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T19')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Jeonpo Cafe Street • 10 min
+            </strong>
+
+            <span>
+              Seomyeon Station → Jeonpo Cafe Street
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER & SOIREE A JEONPO -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="23"
+          onclick="selectionnerEtape(this); allerAuLieu(23)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Dîner & soirée
+            </span>
+
+            <span class="heure-badge">
+              20h10 et +
+            </span>
+
+            <strong>
+              Jeonpo Cafe Street
+            </strong>
+
+            <span>
+              Dîner et promenade dans le quartier • Bao Haus si envie
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- JEONPO → HEBERGEMENT -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J07-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J07-T20')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à l'hébergement
+            </strong>
+
+            <span>
+              Jeonpo Cafe Street → Hébergement Busan
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HEBERGEMENT BUSAN -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="24"
+          onclick="selectionnerEtape(this); allerAuLieu(24)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Hébergement Busan
+            </strong>
+
+            <span>
+              부산진구 전포동 192-17 4층
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour04">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Séoul & DMZ
+    </div>
+
+    <h1>
+      Excursion DMZ & N Seoul Tower
+    </h1>
+
+    <div class="date">
+      Mardi 20 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour03.html">
+        ← Jour 3
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 4 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour05.html">
+        Jour 5 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>DMZ & Séoul</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🪖</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>DMZ & Namsan</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚌</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Bus + métro</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Wool Stay</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+          <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Départ pour la DMZ</h3>
+
+            <p>
+              Hyehwa → Myeongdong puis départ de l'excursion vers Imjingak
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEBUT DE JOURNEE - WOOL STAY -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              06h00
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              Préparation pour l'excursion à la DMZ
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-important">
+                🛂 Ne pas oublier le passeport
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE WOOL STAY → HYEHWA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J04-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hyehwa Station • 5 min
+            </strong>
+
+            <span>
+              Wool Stay → Hyehwa 420
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO HYEHWA → MYEONGDONG -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J04-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              07h00 – 07h15
+            </span>
+
+            <strong>
+              Hyehwa 420 → Myeongdong 424
+            </strong>
+
+            <span>
+              Direction Oido
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 9</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MYEONGDONG STATION → SORTIE 9 -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J04-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T03')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre la sortie 9
+            </strong>
+
+            <span>
+              Point de rendez-vous pour l'excursion DMZ
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             EXCURSION DMZ
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              DMZ
+            </span>
+
+            <h3>Séoul → Imjingak</h3>
+
+            <p>
+              Début de l'excursion vers la zone démilitarisée
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUS SEOUL → IMJINGAK -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-trajet="J04-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus d'excursion
+            </span>
+
+            <span class="heure-badge">
+              07h30 – 08h20
+            </span>
+
+            <strong>
+              Séoul → Imjingak Park
+            </strong>
+
+            <span>
+              Trajet vers la DMZ
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Excursion DMZ</span>
+              <span class="badge">⏱ 50 min</span>
+              <span class="badge">💰 70 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IMJINGAK PARK -->
+
+        <div class="etape etape-carte carte-parc etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-parc">🌳</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-parc">
+              Parc
+            </span>
+
+            <span class="heure-badge">
+              08h20 – 08h50
+            </span>
+
+            <strong>
+              Imjingak Park
+            </strong>
+
+            <span>
+              Première étape de l'excursion DMZ
+            </span>
+
+          </div>
+
+        </div>
+
+
+         <!-- DMZ DEFECTOR TALK -->
+
+        <div class="etape etape-carte carte-site">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🎙️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Présentation
+            </span>
+
+            <span class="heure-badge">
+              08h50 – 09h20
+            </span>
+
+            <strong>
+              DMZ Defector Talk
+            </strong>
+
+            <span>
+              Présentation et témoignage dans le cadre de l'excursion DMZ
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- IMJINGAK → THIRD TUNNEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J04-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T05')">
+
+          <div class="liaison-icone">
+            🚌
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Transfert vers The Third Tunnel
+            </strong>
+
+            <span>
+              Excursion DMZ
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- THIRD TUNNEL -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🕳️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Site DMZ
+            </span>
+
+            <span class="heure-badge">
+              09h20 – 10h20
+            </span>
+
+            <strong>
+              The Third Tunnel
+            </strong>
+
+            <span>
+              Visite du troisième tunnel d'infiltration
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- THIRD TUNNEL → DORA OBSERVATORY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J04-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T06')">
+
+          <div class="liaison-icone">
+            🚌
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Transfert vers Dora Observatory
+            </strong>
+
+            <span>
+              Excursion DMZ
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DORA OBSERVATORY -->
+
+        <div class="etape etape-carte carte-observatoire etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-observatoire">🔭</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-observatoire">
+              Observatoire
+            </span>
+
+            <span class="heure-badge">
+              10h20 – 11h10
+            </span>
+
+            <strong>
+              Dora Observatory
+            </strong>
+
+            <span>
+              Point d'observation sur la zone démilitarisée
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             RETOUR A SEOUL
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Retour à Séoul
+            </span>
+
+            <h3>DMZ → City Hall</h3>
+
+            <p>
+              Fin de l'excursion puis retour dans le centre de Séoul
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DORA OBSERVATORY → CITY HALL -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-trajet="J04-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus d'excursion
+            </span>
+
+            <span class="heure-badge">
+              11h10 – 12h00
+            </span>
+
+            <strong>
+              Dora Observatory → Seoul City Hall
+            </strong>
+
+            <span>
+              Retour au centre de Séoul
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Retour</span>
+              <span class="badge">⏱ 50 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             CENTRE DE SEOUL
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi
+            </span>
+
+            <h3>City Hall & Deoksugung</h3>
+
+            <p>
+              Déjeuner près de City Hall puis visite de Deoksugung
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CITY HALL → RESTAURANT -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J04-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre le restaurant • 5 min
+            </strong>
+
+            <span>
+              Seoul City Hall → Bukchang-dong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h05 – 13h00
+            </span>
+
+            <strong>
+              Jeonju Yu Halmeoni Bibimbap
+            </strong>
+
+            <span>
+              Bukchang-dong Main • Bibimbap
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESTAURANT → DEOKSUGUNG -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J04-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Deoksugung Palace • 5 min
+            </strong>
+
+            <span>
+              Restaurant → Deoksugung
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEOKSUGUNG PALACE -->
+
+        <div class="etape etape-carte carte-palais etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-palais">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-palais">
+              Palais
+            </span>
+
+            <span class="heure-badge">
+              13h05 – 14h05
+            </span>
+
+            <strong>
+              Deoksugung Palace
+            </strong>
+
+            <span>
+              Visite du palais dans le centre de Séoul
+            </span>
+
+            <div class="badges">
+              <span class="badge">💰 1 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             NAMSAN & N SEOUL TOWER
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Myeongdong & Namsan</h3>
+
+            <p>
+              Passage par Myeongdong puis montée vers N Seoul Tower
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEOKSUGUNG → NAMSAN ORMI -->
+
+        <div class="etape etape-carte carte-marche etape-cliquable"
+          data-trajet="J04-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche & pause
+            </span>
+
+            <span class="heure-badge">
+              14h05 – 15h35
+            </span>
+
+            <strong>
+              Deoksugung → Myeongdong → Namsan Ormi
+            </strong>
+
+            <span>
+              Passage par Myeongdong, pause puis marche vers la station du téléphérique
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 25 min de marche</span>
+              <span class="badge">☕ Pause à Myeongdong</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAMSAN ORMI / CABLE CAR -->
+
+        <div class="etape etape-carte carte-telepherique etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-telepherique">🚡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-telepherique">
+              Namsan
+            </span>
+
+            <span class="heure-badge">
+              15h35
+            </span>
+
+            <strong>
+              Namsan Ormi & Cable Car
+            </strong>
+
+            <span>
+              Accès au téléphérique pour rejoindre Namsan
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAMSAN ORMI + CABLE CAR → N SEOUL TOWER -->
+
+        <div class="etape etape-carte carte-telepherique etape-cliquable"
+          data-trajet="J04-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-telepherique">🚡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-telepherique">
+              Téléphérique
+            </span>
+
+            <span class="heure-badge">
+              15h35 – 16h10
+            </span>
+
+            <strong>
+              Namsan Ormi → N Seoul Tower
+            </strong>
+
+            <span>
+              Namsan Ormi puis Namsan Cable Car
+            </span>
+
+            <div class="badges">
+              <span class="badge">🚡 Namsan Cable Car</span>
+              <span class="badge">⏱ 35 min</span>
+              <span class="badge">💰 12,40 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- N SEOUL TOWER -->
+
+        <div class="etape etape-carte carte-observatoire etape-cliquable"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu(12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-observatoire">🗼</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-observatoire">
+              Observatoire
+            </span>
+
+            <span class="heure-badge">
+              16h20 – 18h30
+            </span>
+
+            <strong>
+              N Seoul Tower
+            </strong>
+
+            <span>
+              Visite de la tour et panorama sur Séoul
+            </span>
+
+            <div class="badges">
+              <span class="badge">💰 30 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             SOIREE A MYEONGDONG
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Namsan → Myeongdong → Hyehwa</h3>
+
+            <p>
+              Descente de Namsan, dîner à Myeongdong puis retour à Wool Stay
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- N SEOUL TOWER → YEJANG PARKING LOT -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-trajet="J04-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus Namsan
+            </span>
+
+            <span class="heure-badge">
+              18h30 – 19h05
+            </span>
+
+            <strong>
+              N Seoul Tower → Namsan Yejang Parking Lot
+            </strong>
+
+            <span>
+              Descente de Namsan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 01A ou 01B</span>
+              <span class="badge">⏱ 35 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAMSAN YEJANG PARKING LOT -->
+
+        <div class="etape etape-carte carte-arretbus etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-arretbus">🚏</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-arretbus">
+              Arrêt de bus
+            </span>
+
+            <span class="heure-badge">
+              19h05
+            </span>
+
+            <strong>
+              Namsan Yejang Parking Lot
+            </strong>
+
+            <span>
+              Arrivée après la descente de Namsan
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- YEJANG → MYEONGDONG KYOJA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J04-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Myeongdong Kyoja • 10 min
+            </strong>
+
+            <span>
+              Namsan Yejang Parking Lot → Myeongdong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              19h20 et +
+            </span>
+
+            <strong>
+              Myeongdong Kyoja
+            </strong>
+
+            <span>
+              Kalguksu à Myeongdong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESTAURANT → MYEONGDONG STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J04-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Myeongdong Station • 5 min
+            </strong>
+
+            <span>
+              Myeongdong Kyoja → Myeongdong 424
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO MYEONGDONG → HYEHWA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="16"
+          data-trajet="J04-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <strong>
+              Myeongdong 424 → Hyehwa 420
+            </strong>
+
+            <span>
+              Direction Jinjeop
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 4</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HYEHWA → WOOL STAY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J04-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J04-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Wool Stay • 5 min
+            </strong>
+
+            <span>
+              Hyehwa Station → Wool Stay
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              41-8 Daehak-ro 11-gil, Jongno District
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour18">
+
+  <header class="entete">
+
+    <div class="destination">
+      Japon • Kawagoe
+    </div>
+
+    <h1>
+      Kawagoe — Kita-in, château, Kurazukuri & Hikawa-jinja
+    </h1>
+
+    <div class="date">
+      Mardi 3 novembre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour17.html">
+        ← Jour 17
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 18 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour19.html">
+        Jour 19 →
+      </a>
+
+    </nav>
+
+  </header>
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Tokyo → Kawagoe</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏯</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Kita-in → Honmaru Goten → Kurazukuri → Hikawa-jinja</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚆</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR Yamanote + Tōbu Tōjō + bus local</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Road Papk Hotel • Sugamo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+  
+         <!-- ==================================================
+             MATIN - SUGAMO → KAWAGOE
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Sugamo → Kawagoe</h3>
+
+            <p>
+              JR Yamanote jusqu'à Ikebukuro puis Tōbu Tōjō Line vers Kawagoe avant de rejoindre Kita-in
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - ROAD PAPK HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h30
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SUGAMO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J18-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Sugamo Station
+            </strong>
+
+            <span>
+              Road Papk Hotel → Sugamo JY11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → IKEBUKURO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="3"
+          data-trajet="J18-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              08h30 – 08h35
+            </span>
+
+            <strong>
+              Sugamo JY11 → Ikebukuro JY13
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IKEBUKURO → KAWAGOE -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="4"
+          data-trajet="J18-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Express
+            </span>
+
+            <span class="heure-badge">
+              08h45 – 09h15
+            </span>
+
+            <strong>
+              Ikebukuro TJ01 → Kawagoe TJ21
+            </strong>
+
+            <span>
+              Direction Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Tōbu Tōjō Line</span>
+              <span class="badge">⚡ Express / Kyuko</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">🔄 Correspondance à Ikebukuro</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KAWAGOE STATION → KITA-IN - OPTION BUS -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-lieu="5"
+          data-trajet="J18-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus rétro
+            </span>
+
+            <span class="heure-badge">
+              09h20 – 09h45
+            </span>
+
+            <strong>
+              Kawagoe Station → Kita-in
+            </strong>
+
+            <span>
+              Koedo Loop Bus vers le quartier historique
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Koedo Loop Bus</span>
+              <span class="badge">⏱ 25 min</span>
+              <span class="badge">⭐ Option 1</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KAWAGOE STATION → KITA-IN - OPTION MARCHE -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="5"
+          data-trajet="J18-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Alternative
+            </span>
+
+            <strong>
+              Kawagoe Station → Kita-in
+            </strong>
+
+            <span>
+              Alternative à pied au Koedo Loop Bus
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">Option 2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KITA-IN -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              09h45 – 11h15
+            </span>
+
+            <strong>
+              Kita-in
+            </strong>
+
+            <span>
+              Temple historique de Kawagoe • bâtiments liés à l'ancien château d'Edo et 500 statues de Rakan
+            </span>
+
+            <div class="badges">
+              <span class="badge">🗿 500 Rakan</span>
+              <span class="badge">🎟️ 3,55 $</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             FIN DE MATINEE & DEBUT D'APRES-MIDI - KAWAGOE HISTORIQUE
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée & début d'après-midi
+            </span>
+
+            <h3>Kita-in → Château → Kurazukuri</h3>
+
+            <p>
+              Palais du château de Kawagoe, déjeuner unagi puis découverte du quartier historique et de Toki no Kane
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- KITA-IN → HONMARU GOTEN -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="6"
+          data-trajet="J18-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Déplacement
+            </span>
+
+            <strong>
+              Kita-in → Honmaru Goten
+            </strong>
+
+            <span>
+              Marche vers l'ancien palais du château de Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HONMARU GOTEN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏰</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Palais
+            </span>
+
+            <span class="heure-badge">
+              11h30 – 12h15
+            </span>
+
+            <strong>
+              Kawagoe Castle Honmaru Goten
+            </strong>
+
+            <span>
+              Visite du palais subsistant de l'ancien château de Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge">🏰 Château de Kawagoe</span>
+              <span class="badge">🎟️ 0,90 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HONMARU GOTEN → UNAGI HAYASHIYA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J18-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Unagi Hayashiya
+            </strong>
+
+            <span>
+              Honmaru Goten → Japanese Restaurant Unagi Hayashiya Kawagoe Store
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UNAGI HAYASHIYA -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h15 – 13h45
+            </span>
+
+            <strong>
+              Japanese Restaurant Unagi Hayashiya Kawagoe Store
+            </strong>
+
+            <span>
+              Déjeuner dans le quartier historique de Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge">🐟 Unagi</span>
+              <span class="badge">🍚 Cuisine japonaise</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UNAGI HAYASHIYA → KURAZUKURI -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="8"
+          data-trajet="J18-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T08')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Visite
+            </span>
+
+            <strong>
+              Unagi Hayashiya → Kurazukuri
+            </strong>
+
+            <span>
+              Début de la promenade dans le cœur historique de Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🏘️ Vieille ville</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KURAZUKURI -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🛕</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier historique
+            </span>
+
+            <span class="heure-badge">
+              13h45 – 15h30
+            </span>
+
+            <strong>
+              Kurazukuri
+            </strong>
+
+            <span>
+              Promenade parmi les anciennes maisons-entrepôts traditionnelles de Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge">🏘️ Kurazukuri</span>
+              <span class="badge">📸 Vieille ville</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KURAZUKURI → TOKI NO KANE -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="9"
+          data-trajet="J18-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Visite
+            </span>
+
+            <strong>
+              Kurazukuri → Toki no Kane
+            </strong>
+
+            <span>
+              Promenade dans les rues historiques jusqu'à la tour de l'horloge
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKI NO KANE -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🕰️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Patrimoine
+            </span>
+
+            <strong>
+              Toki no Kane
+            </strong>
+
+            <span>
+              Tour de l'horloge emblématique de Kawagoe • visite pendant la promenade dans Kurazukuri
+            </span>
+
+            <div class="badges">
+              <span class="badge">🕰️ Tour de l'horloge</span>
+              <span class="badge">🏘️ Kurazukuri</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+        <!-- ==================================================
+             APRES-MIDI & SOIREE - VIEILLE VILLE → TOKYO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi & soirée
+            </span>
+
+            <h3>Kashiya Yokocho → Hikawa-jinja → Tokyo</h3>
+
+            <p>
+              Ruelle des bonbons, sanctuaire Hikawa puis retour à Sugamo via Kawagoe et Ikebukuro
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKI NO KANE → KASHIYA YOKOCHO -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="10"
+          data-trajet="J18-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Toki no Kane → Kashiya Yokocho
+            </strong>
+
+            <span>
+              Marche à travers le quartier historique vers la célèbre ruelle des bonbons
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KASHIYA YOKOCHO -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🍬</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Ruelle commerçante
+            </span>
+
+            <span class="heure-badge">
+              15h30 – 16h30
+            </span>
+
+            <strong>
+              Kashiya Yokocho
+            </strong>
+
+            <span>
+              Petite ruelle historique réputée pour ses boutiques de bonbons et gourmandises japonaises
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍬 Ruelle des bonbons</span>
+              <span class="badge">🍠 Snacks locaux</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KASHIYA YOKOCHO → KAWAGOE HIKAWA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="11"
+          data-trajet="J18-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Déplacement
+            </span>
+
+            <strong>
+              Kashiya Yokocho → Kawagoe Hikawa
+            </strong>
+
+            <span>
+              Marche vers le sanctuaire Hikawa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KAWAGOE HIKAWA -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Sanctuaire
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 17h30
+            </span>
+
+            <strong>
+              Kawagoe Hikawa
+            </strong>
+
+            <span>
+              Visite du sanctuaire shinto et de ses installations consacrées aux liens et à la bonne fortune
+            </span>
+
+            <div class="badges">
+              <span class="badge">🎋 Tunnel d'Ema</span>
+              <span class="badge">🎣 Pêche aux omikuji</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KAWAGOE HIKAWA → KAWAGOE STATION -->
+
+        <div class="etape etape-carte carte-bus transport transport-bus etape-cliquable"
+          data-lieu="12"
+          data-trajet="J18-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              17h30 – 17h45
+            </span>
+
+            <strong>
+              Kawagoe Hikawa → Kawagoe Station
+            </strong>
+
+            <span>
+              Retour vers la gare de Kawagoe
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Bus local</span>
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KAWAGOE → IKEBUKURO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="13"
+          data-trajet="J18-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Express
+            </span>
+
+            <span class="heure-badge">
+              18h00 – 18h30
+            </span>
+
+            <strong>
+              Kawagoe TJ21 → Ikebukuro TJ01
+            </strong>
+
+            <span>
+              Direction Ikebukuro
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Tōbu Tōjō Line</span>
+              <span class="badge">⚡ Express / Kyuko</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IKEBUKURO → SUGAMO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="14"
+          data-trajet="J18-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T14')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              18h35 – 18h40
+            </span>
+
+            <strong>
+              Ikebukuro JY13 → Sugamo JY11
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🔄 Correspondance à Ikebukuro</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → ROAD PAPK HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J18-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J18-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour au Road Papk Hotel
+            </strong>
+
+            <span>
+              Sugamo JY11 → Road Papk Hotel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROAD PAPK HOTEL - NUIT -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="15"
+          onclick="selectionnerEtape(this); allerAuLieu(15)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

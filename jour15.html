@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour15">
+
+  <header class="entete">
+
+     <div class="destination">
+      Japon • Tokyo
+    </div>
+
+    <h1>
+      Tokyo — Asakusa, Ueno, Akihabara & Shibuya
+    </h1>
+
+    <div class="date">
+      Samedi 31 octobre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour14.html">
+        ← Jour 14
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 15 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour16.html">
+        Jour 16 →
+      </a>
+
+    </nav>
+
+  </header>
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Tokyo</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">⛩️</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Asakusa → Ueno → Akihabara → Shibuya</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚈</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR Yamanote + Ginza Line + Tokyo Monorail</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Tokyo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <!-- ==================================================
+             MATIN - NEGISHI → ASAKUSA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Negishi → Asakusa</h3>
+
+            <p>
+              JR Yamanote jusqu'à Ueno puis Ginza Line vers Asakusa, Sensō-ji et Nakamise Street
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - HEBERGEMENT NEGISHI -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h30
+            </span>
+
+            <strong>
+              Hébergement – Negishi
+            </strong>
+
+            <span>
+              3-chōme-24-18 Negishi, Taito City
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → UGUISUDANI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J15-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Uguisudani Station
+            </strong>
+
+            <span>
+              Hébergement → Uguisudani JY06
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UGUISUDANI → UENO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="3"
+          data-trajet="J15-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              08h00 – 08h05
+            </span>
+
+            <strong>
+              Uguisudani JY06 → Ueno JY05
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UENO → ASAKUSA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="4"
+          data-trajet="J15-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              08h10 – 08h20
+            </span>
+
+            <strong>
+              Ueno G16 → Asakusa G19
+            </strong>
+
+            <span>
+              Direction Asakusa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Ginza Line</span>
+              <span class="badge">🔄 Correspondance JR → métro</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🚪 Sortie 1</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ASAKUSA STATION → SENSO-JI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="5"
+          data-trajet="J15-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Sensō-ji
+            </strong>
+
+            <span>
+              Asakusa G19, sortie 1 → Sensō-ji
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SENSO-JI -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              08h20
+            </span>
+
+            <strong>
+              Sensō-ji
+            </strong>
+
+            <span>
+              Visite du célèbre temple bouddhiste d'Asakusa
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SENSO-JI → NAKAMISE STREET -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="6"
+          data-trajet="J15-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Sensō-ji → Nakamise Street
+            </strong>
+
+            <span>
+              Promenade dans le quartier traditionnel d'Asakusa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🏮 Asakusa</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAKAMISE STREET -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏮</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Rue commerçante
+            </span>
+
+            <span class="heure-badge">
+              Jusqu'à 10h30
+            </span>
+
+            <strong>
+              Nakamise Street
+            </strong>
+
+            <span>
+              Boutiques traditionnelles, souvenirs et spécialités japonaises
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAKAMISE STREET → ASAKUSA KOKONOE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J15-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Asakusa Kokonoe
+            </strong>
+
+            <span>
+              Nakamise Street → Asakusa Kokonoe
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ASAKUSA KOKONOE -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍡</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Street food
+            </span>
+
+            <span class="heure-badge">
+              10h30 – 11h30
+            </span>
+
+            <strong>
+              Asakusa Kokonoe
+            </strong>
+
+            <span>
+              Déjeuner street food sur Nakamise Street
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍡 Manjū frits</span>
+            </div>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             FIN DE MATINEE & DEBUT D'APRES-MIDI - ASAKUSA → UENO → AKIHABARA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée & début d'après-midi
+            </span>
+
+            <h3>Asakusa → Ueno → Akihabara</h3>
+
+            <p>
+              Retour à Ueno, promenade dans le parc, visite du Musée national de Tokyo puis JR Yamanote vers Akihabara
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ASAKUSA KOKONOE → ASAKUSA STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J15-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Asakusa Station
+            </strong>
+
+            <span>
+              Asakusa Kokonoe → Asakusa G19
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ASAKUSA → UENO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="9"
+          data-trajet="J15-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T08')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              11h30 – 11h45
+            </span>
+
+            <strong>
+              Asakusa G19 → Ueno G16
+            </strong>
+
+            <span>
+              Direction Shibuya
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Ginza Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Sortie 7</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UENO STATION → UENO PARK -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="10"
+          data-trajet="J15-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Ueno Park
+            </strong>
+
+            <span>
+              Ueno G16, sortie 7 → Ueno Park
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UENO PARK -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌳</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Parc
+            </span>
+
+            <span class="heure-badge">
+              11h45
+            </span>
+
+            <strong>
+              Ueno Park
+            </strong>
+
+            <span>
+              Promenade dans le grand parc culturel de Ueno
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UENO PARK → TOKYO NATIONAL MUSEUM -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="11"
+          data-trajet="J15-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Ueno Park → Tokyo National Museum
+            </strong>
+
+            <span>
+              Traversée du parc jusqu'au Musée national de Tokyo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKYO NATIONAL MUSEUM -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏛️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Musée
+            </span>
+
+            <span class="heure-badge">
+              Jusqu'à 13h15
+            </span>
+
+            <strong>
+              Tokyo National Museum
+            </strong>
+
+            <span>
+              Découverte des collections d'art et du patrimoine japonais
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 9 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOKYO NATIONAL MUSEUM → UENO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="12"
+          data-trajet="J15-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Ueno Station
+            </strong>
+
+            <span>
+              Tokyo National Museum → Ueno JY05
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UENO → AKIHABARA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="13"
+          data-trajet="J15-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              13h15 – 13h30
+            </span>
+
+            <strong>
+              Ueno JY05 → Akihabara JY03
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🚪 Electric Town Gate</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AKIHABARA STATION → AKIHABARA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="14"
+          data-trajet="J15-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Début de la visite d'Akihabara
+            </strong>
+
+            <span>
+              Akihabara JY03, Electric Town Gate → Akihabara
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- AKIHABARA -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🎮</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier
+            </span>
+
+            <span class="heure-badge">
+              13h30 – 15h15
+            </span>
+
+            <strong>
+              Akihabara
+            </strong>
+
+            <span>
+              Électronique, manga, anime, arcades et cafés à thème
+            </span>
+
+            <div class="badges">
+              <span class="badge">🎮 Arcades</span>
+              <span class="badge">🛍️ Électronique & manga</span>
+            </div>
+
+          </div>
+
+        </div>
+  
+        <!-- ==================================================
+             APRES-MIDI - AKIHABARA → SHIBUYA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Akihabara → Shibuya</h3>
+
+            <p>
+              JR Yamanote jusqu'à Shibuya puis montée à Shibuya Sky pour admirer Tokyo au coucher du soleil
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- AKIHABARA → AKIHABARA STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J15-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Akihabara Station
+            </strong>
+
+            <span>
+              Akihabara → Akihabara JY03
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- AKIHABARA → SHIBUYA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="16"
+          data-trajet="J15-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              15h15 – 15h45
+            </span>
+
+            <strong>
+              Akihabara JY03 → Shibuya JY20
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">🚪 Sortie Hachikō</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA STATION → SHIBUYA SKY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J15-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Shibuya Sky
+            </strong>
+
+            <span>
+              Shibuya JY20, sortie Hachikō → Shibuya Sky
+            </span>
+
+            <span>
+              15h45 – 16h30 • trajet, orientation et marge avant l'entrée
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA SKY -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Observatoire
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 17h30
+            </span>
+
+            <strong>
+              Shibuya Sky
+            </strong>
+
+            <span>
+              Vue panoramique sur Tokyo depuis l'observatoire de Shibuya
+            </span>
+
+            <div class="badges">
+              <span class="badge">🎟️ 30 $</span>
+              <span class="badge">🌇 Panorama</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             SOIREE - SHIBUYA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soirée
+            </span>
+
+            <h3>Shibuya Crossing & dîner</h3>
+
+            <p>
+              Après Shibuya Sky, découverte du célèbre carrefour puis dîner à Uobei Sushi
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA SKY → SHIBUYA CROSSING -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="18"
+          data-trajet="J15-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T17')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <span class="heure-badge">
+              À partir de 17h30
+            </span>
+
+            <strong>
+              Shibuya Sky → Shibuya Crossing
+            </strong>
+
+            <span>
+              Descente vers le quartier puis découverte du célèbre carrefour de Shibuya
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">👤 Ton programme</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA CROSSING -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="18"
+          onclick="selectionnerEtape(this); allerAuLieu(18)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Carrefour
+            </span>
+
+            <strong>
+              Shibuya Crossing
+            </strong>
+
+            <span>
+              Traversée du carrefour emblématique de Shibuya
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA CROSSING → UOBEI SUSHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="19"
+          data-trajet="J15-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Uobei Sushi
+            </strong>
+
+            <span>
+              Shibuya Crossing → Uobei Sushi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UOBEI SUSHI -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="19"
+          onclick="selectionnerEtape(this); allerAuLieu(19)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              17h30 et +
+            </span>
+
+            <strong>
+              Uobei Sushi
+            </strong>
+
+            <span>
+              Dîner à Shibuya
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍣 Sushi</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             DEPART DES PARENTS - SHIBUYA → HANEDA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Pour les parents
+            </span>
+
+            <h3>Shibuya → Negishi → Haneda</h3>
+
+            <p>
+              Retour à l'hébergement pour récupérer les bagages puis JR Yamanote et Tokyo Monorail vers Haneda
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA SKY → SHIBUYA STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="20"
+          data-trajet="J15-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T19')">
+
+          <div class="liaison-icone">
+            👨‍👩‍👧
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Les parents rejoignent Shibuya Station
+            </strong>
+
+            <span>
+              Shibuya Sky → Shibuya JY20
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIBUYA → UGUISUDANI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="21"
+          data-trajet="J15-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T20')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR • Parents
+            </span>
+
+            <span class="heure-badge">
+              17h35 – 18h05
+            </span>
+
+            <strong>
+              Shibuya JY20 → Uguisudani JY06
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">👨‍👩‍👧 Parents</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- UGUISUDANI → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="22"
+          data-trajet="J15-T21"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T21')">
+
+          <div class="liaison-icone">
+            🧳
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à l'hébergement
+            </strong>
+
+            <span>
+              Uguisudani JY06 → Negishi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL - RECUPERATION BAGAGES -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="22"
+          onclick="selectionnerEtape(this); allerAuLieu(22)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🧳</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Bagages
+            </span>
+
+            <strong>
+              Hébergement – Negishi
+            </strong>
+
+            <span>
+              Récupération des bagages avant le départ vers Haneda
+            </span>
+
+            <div class="badges">
+              <span class="badge">👨‍👩‍👧 Parents</span>
+              <span class="badge">🧳 Récupération des bagages</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → UGUISUDANI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="21"
+          data-trajet="J15-T22"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T22')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Uguisudani Station
+            </strong>
+
+            <span>
+              Hébergement – Negishi → Uguisudani JY06
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- UGUISUDANI → HAMAMATSUCHO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="23"
+          data-trajet="J15-T23"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T23')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR • Parents
+            </span>
+
+            <span class="heure-badge">
+              18h20 – 18h35
+            </span>
+
+            <strong>
+              Uguisudani JY06 → Hamamatsucho JY28
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 15 min</span>
+              <span class="badge">🧳 Avec bagages</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAMAMATSUCHO → HANEDA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="24"
+          data-trajet="J15-T24"
+          onclick="selectionnerEtape(this); allerAuTrajet('J15-T24')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚝</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Monorail
+            </span>
+
+            <span class="heure-badge">
+              À partir de 18h35
+            </span>
+
+            <strong>
+              Hamamatsucho MO01 → Haneda Airport
+            </strong>
+
+            <span>
+              Direction Haneda Airport
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚝 Tokyo Monorail</span>
+              <span class="badge">⚡ Haneda Express</span>
+              <span class="badge">✈️ T3 MO08 / T1-2 MO10-11</span>
+              <span class="badge">👨‍👩‍👧 Parents</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HANEDA AIRPORT -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="24"
+          onclick="selectionnerEtape(this); allerAuLieu(24)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">✈️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Aéroport
+            </span>
+
+            <strong>
+              Aéroport international de Haneda
+            </strong>
+
+            <span>
+              Fin du trajet des parents • terminal selon leur vol
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

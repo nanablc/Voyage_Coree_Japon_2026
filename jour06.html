@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour06">
+
+    <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Suwon → Busan
+    </div>
+
+    <h1>
+      Suwon Hwaseong — puis départ pour Busan
+    </h1>
+
+    <div class="date">
+      Jeudi 22 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour05.html">
+        ← Jour 5
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 6 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour07.html">
+        Jour 7 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Suwon → Busan</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏯</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Suwon Hwaseong</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚆</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Train + bus + marche</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Busan</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Séoul → Suwon</h3>
+
+            <p>
+              Départ de Wool Stay, train depuis Seoul Station puis arrivée à Suwon
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEBUT DE JOURNEE - WOOL STAY -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h00
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              Préparation puis départ pour Suwon
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- WOOL STAY → HYEHWA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J06-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hyehwa Station • 5 min
+            </strong>
+
+            <span>
+              Wool Stay → Hyehwa 420
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HYEHWA → SEOUL STATION -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J06-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              08h00 – 08h25
+            </span>
+
+            <strong>
+              Hyehwa 420 → Seoul Station 426
+            </strong>
+
+            <span>
+              Direction Oido
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 25 min</span>
+              <span class="badge">🚪 Sortie 14</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO → GARE KORAIL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J06-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T03')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Correspondance vers la gare Korail
+            </strong>
+
+            <span>
+              Seoul Station 426 → Seoul Station Korail
+            </span>
+
+          </div>
+
+        </div>
+
+
+          <!-- SEOUL STATION → SUWON -->
+
+        <div class="etape etape-carte carte-train transport etape-cliquable"
+          data-lieu="5"
+          data-trajet="J06-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Train
+            </span>
+
+            <span class="heure-badge">
+              08h50 – 09h20
+            </span>
+
+            <strong>
+              Seoul Station → Suwon Station
+            </strong>
+
+            <span>
+              Korail ITX-Maum • Direction Cheonan / Sinchang / Busan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 ITX-Maum</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">💳 9 $</span>
+              <span class="badge">🚪 Sortie 9</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- BAGAGES A SUWON -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🎒</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Bagages
+            </span>
+
+            <span class="heure-badge">
+              09h20 – 09h45
+            </span>
+
+            <strong>
+              Dépôt des bagages
+            </strong>
+
+            <span>
+              Laisser les bagages dans un locker à Suwon Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUWON STATION → TRANSFER CENTER -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J06-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Suwon Station Transfer Center • 5 min
+            </strong>
+
+            <span>
+              Suwon Station → Suwon Station Transfer Center
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUS → PALDALMUN -->
+
+        <div class="etape etape-carte carte-bus transport etape-cliquable"
+          data-trajet="J06-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              09h50 – 10h10
+            </span>
+
+            <strong>
+              Suwon Station Transfer Center → Paldalmun
+            </strong>
+
+            <span>
+              Direction Paldalmun / Haenggung
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 66 / 11 / 13</span>
+              <span class="badge">⏱ 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PALDALMUN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Porte
+            </span>
+
+            <span class="heure-badge">
+              10h20 – 10h35
+            </span>
+
+            <strong>
+              Porte Paldalmun
+            </strong>
+
+            <span>
+              Porte sud de la forteresse de Suwon Hwaseong
+            </span>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             SUWON HWASEONG - PALDALMUN & HAENGGUNG
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Suwon
+            </span>
+
+            <h3>Paldalmun → Hwaseong Haenggung</h3>
+
+            <p>
+              Porte Paldalmun, palais royal puis découverte de Haenggung-dong
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- PALDALMUN → HWASEONG HAENGGUNG -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Hwaseong Haenggung • 10 min
+            </strong>
+
+            <span>
+              Paldalmun → Palais Hwaseong Haenggung
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HWASEONG HAENGGUNG -->
+
+        <div class="etape etape-carte carte-palais etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-palais">👑</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-palais">
+              Palais
+            </span>
+
+            <span class="heure-badge">
+              10h45 – 11h40
+            </span>
+
+            <strong>
+              Palais Hwaseong Haenggung
+            </strong>
+
+            <span>
+              Palais temporaire royal au cœur de la forteresse de Suwon Hwaseong
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 2,10 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAENGGUNG → HAENGNIDAN-GIL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Haengnidan-gil
+            </strong>
+
+            <span>
+              Hwaseong Haenggung → Haenggung-dong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAENGNIDAN-GIL -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏘️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier
+            </span>
+
+            <span class="heure-badge">
+              11h40 – 12h10
+            </span>
+
+            <strong>
+              Haengnidan-gil & Haenggung-dong
+            </strong>
+
+            <span>
+              Rues animées, cafés et petites boutiques autour du palais
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HAENGNIDAN-GIL → YEONPO GALBI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche jusqu'à Yeonpo Galbi • 10 min
+            </strong>
+
+            <span>
+              Haengnidan-gil → Yeonpo Galbi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER - YEONPO GALBI -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h20 – 13h20
+            </span>
+
+            <strong>
+              Yeonpo Galbi
+            </strong>
+
+            <span>
+              Déjeuner de Suwon Galbi
+            </span>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             SUWON HWASEONG - REMPARTS
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Hwahongmun → Hwaseomun</h3>
+
+            <p>
+              Pavillon, étang puis promenade sur les remparts de Suwon Hwaseong
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- YEONPO GALBI → HWAHONGMUN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Hwahongmun
+            </strong>
+
+            <span>
+              Yeonpo Galbi → Hwahongmun
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HWAHONGMUN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌉</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Forteresse
+            </span>
+
+            <span class="heure-badge">
+              13h20 – 13h35
+            </span>
+
+            <strong>
+              Hwahongmun
+            </strong>
+
+            <span>
+              Porte d'eau de la forteresse de Suwon Hwaseong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HWAHONGMUN → BANGHWASURYUJEONG -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Banghwasuryujeong
+            </strong>
+
+            <span>
+              Hwahongmun → Banghwasuryujeong & Yongyeon
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BANGHWASURYUJEONG & YONGYEON -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu(12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌿</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Pavillon & étang
+            </span>
+
+            <span class="heure-badge">
+              13h35 – 13h50
+            </span>
+
+            <strong>
+              Banghwasuryujeong & Yongyeon
+            </strong>
+
+            <span>
+              Pavillon historique dominant l'étang Yongyeon
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BANGHWASURYUJEONG → JANGANMUN -->
+
+        <div class="etape etape-carte carte-marche transport etape-cliquable"
+          data-lieu="13"
+          data-trajet="J06-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🧱</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Remparts
+            </span>
+
+            <span class="heure-badge">
+              13h50 – 14h15
+            </span>
+
+            <strong>
+              Banghwasuryujeong → Janganmun
+            </strong>
+
+            <span>
+              Marche sur les remparts de Suwon Hwaseong
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 Marche</span>
+              <span class="badge">⏱ 25 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- JANGANMUN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Porte
+            </span>
+
+            <span class="heure-badge">
+              14h15 – 14h25
+            </span>
+
+            <strong>
+              Janganmun
+            </strong>
+
+            <span>
+              Porte nord de la forteresse de Suwon Hwaseong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- JANGANMUN → HWASEOMUN -->
+
+        <div class="etape etape-carte carte-marche transport etape-cliquable"
+          data-lieu="14"
+          data-trajet="J06-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🧱</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Remparts
+            </span>
+
+            <span class="heure-badge">
+              14h25 – 14h55
+            </span>
+
+            <strong>
+              Janganmun → Hwaseomun
+            </strong>
+
+            <span>
+              Deuxième portion de marche sur les remparts
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 Marche</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HWASEOMUN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Porte
+            </span>
+
+            <strong>
+              Hwaseomun
+            </strong>
+
+            <span>
+              Porte ouest de la forteresse et fin de la promenade sur les remparts
+            </span>
+
+          </div>
+
+        </div>
+
+
+          <!-- ==================================================
+             RETOUR A SUWON STATION
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Retour
+            </span>
+
+            <h3>Hwaseomun → Suwon Station</h3>
+
+            <p>
+              Retour vers la gare, récupération des bagages puis départ pour Busan
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- HWASEOMUN → SUWON STATION -->
+
+        <div class="etape etape-carte carte-bus transport etape-cliquable"
+          data-lieu="15"
+          data-trajet="J06-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T14')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              15h00 – 15h30
+            </span>
+
+            <strong>
+              Hwaseomun → Suwon Station
+            </strong>
+
+            <span>
+              Retour vers Suwon Station
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-bus">🚌 Bus local</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARRIVEE DU BUS -->
+
+        <div class="etape etape-carte carte-arretbus etape-cliquable"
+          data-lieu="16"
+          onclick="selectionnerEtape(this); allerAuLieu(16)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-arretbus">🚏</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-arretbus">
+              Arrivée
+            </span>
+
+            <span class="heure-badge">
+              15h30
+            </span>
+
+            <strong>
+              Suwon Station
+            </strong>
+
+            <span>
+              Arrivée du bus près de la gare
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RECUPERATION DES BAGAGES -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🎒</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Bagages
+            </span>
+
+            <span class="heure-badge">
+              15h55 – 16h30
+            </span>
+
+            <strong>
+              Suwon Station
+            </strong>
+
+            <span>
+              Récupération des bagages puis attente du KTX
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             SUWON → BUSAN
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi
+            </span>
+
+            <h3>Suwon → Busan</h3>
+
+            <p>
+              Long trajet en KTX vers Busan pour rejoindre la deuxième étape du voyage
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- KTX SUWON → BUSAN -->
+
+        <div class="etape etape-carte carte-train transport etape-cliquable"
+          data-lieu="18"
+          data-trajet="J06-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              KTX
+            </span>
+
+            <span class="heure-badge">
+              16h42 – 19h23
+            </span>
+
+            <strong>
+              Suwon Station → Busan Station
+            </strong>
+
+            <span>
+              Direction Daejeon / Dongdaegu / Busan
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 KTX</span>
+              <span class="badge">⏱ 2 h 41</span>
+              <span class="badge">💳 46 $</span>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ==================================================
+             ARRIVEE A BUSAN
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Busan Station → Seomyeon</h3>
+
+            <p>
+              Arrivée à Busan, métro vers Seomyeon puis dîner avant de rejoindre l'hébergement
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUSAN STATION KORAIL → METRO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="19"
+          onclick="selectionnerEtape(this); allerAuLieu(19)">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre le métro
+            </strong>
+
+            <span>
+              Busan Station KTX → Busan Station 113
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUSAN STATION → SEOMYEON -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="20"
+          data-trajet="J06-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T16')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              19h40 – 20h05
+            </span>
+
+            <strong>
+              Busan 113 → Seomyeon 119
+            </strong>
+
+            <span>
+              Direction Nopo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❶ Ligne 1</span>
+              <span class="badge">⏱ 25 min</span>
+              <span class="badge">🚪 Sortie 15</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEOMYEON → RESTAURANT -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Wolgu Tteokbokki
+            </strong>
+
+            <span>
+              Seomyeon Station → Wolgu Tteokbokki Bujeon-dong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER A SEOMYEON -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="21"
+          onclick="selectionnerEtape(this); allerAuLieu(21)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              20h15 et +
+            </span>
+
+            <strong>
+              Wolgu Tteokbokki Bujeon-dong
+            </strong>
+
+            <span>
+              Repas rapide à Seomyeon • Tteokbokki
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESTAURANT → HEBERGEMENT -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J06-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J06-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre l'hébergement
+            </strong>
+
+            <span>
+              Wolgu Tteokbokki → hébergement à Busan
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL BUSAN -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="22"
+          onclick="selectionnerEtape(this); allerAuLieu(22)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Hébergement à Busan
+            </strong>
+
+            <span>
+              부산진구 전포동 192-17 4층
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

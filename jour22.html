@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour22">
+
+  <header class="entete">
+
+    <div class="destination">
+      Japon • Tokyo — Dernier jour
+    </div>
+
+    <h1>
+      Tokyo — Rikugien, vieux Tokyo & départ vers Montréal
+    </h1>
+
+    <div class="date">
+      Samedi 7 novembre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour21.html">
+        ← Jour 21
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 22 / 22
+      </span>
+
+      <span class="nav-jour nav-suivant">
+      </span>
+
+    </nav>
+
+  </header>
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Sugamo → Rikugien → Yanaka → Narita</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏯</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Rikugien → Yanaka Ginza → Aéroport de Narita</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚆</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR Yamanote + Keisei Skyliner</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">✈️</span>
+
+      <div>
+        <span class="resume-label">Vol retour</span>
+        <strong>Tokyo NRT → Montréal YUL • 18h45</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+  
+          <!-- ==================================================
+             MATIN - RIKUGIEN & CHECK-OUT
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Sugamo → Rikugien → retour à l'hôtel</h3>
+
+            <p>
+              Dernière matinée à Tokyo avec le jardin Rikugien puis retour à Sugamo pour terminer les bagages et faire le check-out
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - ROAD PAPK HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h00
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              Réveil et préparation des valises avant la dernière matinée à Tokyo
+            </span>
+
+            <div class="badges">
+              <span class="badge">🧳 Préparation des valises</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SUGAMO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J22-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Sugamo Station
+            </strong>
+
+            <span>
+              Road Papk Hotel → Sugamo JY11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → KOMAGOME -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="3"
+          data-trajet="J22-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              09h00 – 09h05
+            </span>
+
+            <strong>
+              Sugamo JY11 → Komagome JY10
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🚪 Sortie 2 • Main Gate</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOMAGOME → RIKUGIEN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="4"
+          data-trajet="J22-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T03')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers le Jardin Rikugien
+            </strong>
+
+            <span>
+              Komagome JY10 • Sortie 2 → Jardin Rikugien
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- JARDIN RIKUGIEN -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="4"
+          onclick="selectionnerEtape(this); allerAuLieu(4)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Jardin
+            </span>
+
+            <span class="heure-badge">
+              09h10 – 11h00
+            </span>
+
+            <strong>
+              Jardin Rikugien
+            </strong>
+
+            <span>
+              Jardin traditionnel d'époque Edo avec étang central, ponts en pierre et en bois et maison de thé
+            </span>
+
+            <div class="badges">
+              <span class="badge">🌿 Jardin japonais</span>
+              <span class="badge">🏯 Époque Edo</span>
+              <span class="badge">🍵 Maison de thé</span>
+              <span class="badge">🎟️ 2,70 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIKUGIEN → KOMAGOME -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="5"
+          data-trajet="J22-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Komagome Station
+            </strong>
+
+            <span>
+              Jardin Rikugien → Komagome JY10
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOMAGOME → SUGAMO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="6"
+          data-trajet="J22-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T05')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              11h00 – 11h05
+            </span>
+
+            <strong>
+              Komagome JY10 → Sugamo JY11
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → ROAD PAPK HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J22-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour au Road Papk Hotel
+            </strong>
+
+            <span>
+              Sugamo JY11 → Road Papk Hotel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROAD PAPK HOTEL - CHECK-OUT -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🧳</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Check-out
+            </span>
+
+            <span class="heure-badge">
+              11h10 – 12h00
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              Fin de la préparation des bagages et check-out avant le déjeuner
+            </span>
+
+            <div class="badges">
+              <span class="badge">🧳 Bagages</span>
+              <span class="badge">🔑 Check-out</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             MIDI & DEBUT D'APRES-MIDI - SUGAMO → YANAKA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi & début d'après-midi
+            </span>
+
+            <h3>Sugamo → Nippori → Yanaka Ginza</h3>
+
+            <p>
+              Dernier déjeuner à Sugamo puis départ avec les bagages vers Nippori avant une promenade dans le vieux Tokyo
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROAD PAPK HOTEL → MEGUROSARASHINA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J22-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Megurosarashina
+            </strong>
+
+            <span>
+              Road Papk Hotel → Megurosarashina
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MEGUROSARASHINA -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h00 – 13h00
+            </span>
+
+            <strong>
+              Megurosarashina
+            </strong>
+
+            <span>
+              Déjeuner léger près de l'hôtel avant le départ vers Nippori
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍽️ Déjeuner</span>
+              <span class="badge">📍 Sugamo</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MEGUROSARASHINA → SUGAMO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          data-trajet="J22-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Sugamo Station
+            </strong>
+
+            <span>
+              Megurosarashina → Sugamo JY11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → NIPPORI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="10"
+          data-trajet="J22-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              13h00 – 13h10
+            </span>
+
+            <strong>
+              Sugamo JY11 → Nippori JY09
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🚪 Keisei Transfer Gate / North Gate</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIPPORI - DEPOT DES BAGAGES -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🔒</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Bagages
+            </span>
+
+            <span class="heure-badge">
+              13h10 – 13h20
+            </span>
+
+            <strong>
+              Nippori Station
+            </strong>
+
+            <span>
+              Dépôt des bagages dans un casier à pièces avant la promenade à Yanaka
+            </span>
+
+            <div class="badges">
+              <span class="badge">🔒 Coin Locker</span>
+              <span class="badge">🧳 Bagages</span>
+              <span class="badge">🚉 JY09 / KS02</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIPPORI → YANAKA GINZA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="11"
+          data-trajet="J22-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Marche vers Yanaka Ginza
+            </strong>
+
+            <span>
+              Nippori Station → Yanaka Ginza
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🏘️ Vieux Tokyo</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- YANAKA GINZA -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="11"
+          onclick="selectionnerEtape(this); allerAuLieu(11)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏘️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Vieux Tokyo
+            </span>
+
+            <span class="heure-badge">
+              13h20 – 14h00
+            </span>
+
+            <strong>
+              Yanaka Ginza
+            </strong>
+
+            <span>
+              Promenade dans les ruelles nostalgiques du vieux Tokyo et derniers snacks de rue
+            </span>
+
+            <div class="badges">
+              <span class="badge">🏘️ Quartier traditionnel</span>
+              <span class="badge">🥔 Croquettes</span>
+              <span class="badge">🍡 Mitarashi dango</span>
+              <span class="badge">🍦 Glaces</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- YANAKA GINZA → NIPPORI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="12"
+          data-trajet="J22-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Nippori Station
+            </strong>
+
+            <span>
+              Yanaka Ginza → Nippori KS02
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIPPORI - RECUPERATION DES BAGAGES -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="12"
+          onclick="selectionnerEtape(this); allerAuLieu(12)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🎒</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Bagages
+            </span>
+
+            <span class="heure-badge">
+              14h15 – 14h35
+            </span>
+
+            <strong>
+              Nippori Station
+            </strong>
+
+            <span>
+              Récupération des bagages aux casiers puis passage des portiques Keisei
+            </span>
+
+            <div class="badges">
+              <span class="badge">🎒 Récupération des bagages</span>
+              <span class="badge">🚆 Keisei Skyliner</span>
+              <span class="badge">🚉 KS02</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+        <!-- ==================================================
+             FIN D'APRES-MIDI - NIPPORI → NARITA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi
+            </span>
+
+            <h3>Nippori → Aéroport de Narita</h3>
+
+            <p>
+              Dernier trajet au Japon en Keisei Skyliner puis enregistrement, sécurité et duty-free avant le vol retour vers Montréal
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NIPPORI → NARITA AIRPORT -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="13"
+          data-trajet="J22-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J22-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Skyliner
+            </span>
+
+            <span class="heure-badge">
+              14h42 – 15h25
+            </span>
+
+            <strong>
+              Nippori KS02 → Narita Airport
+            </strong>
+
+            <span>
+              Direction Narita Airport
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 Keisei Skyliner</span>
+              <span class="badge">⏱ 43 min</span>
+              <span class="badge">🚉 KS41 Terminal 1 / KS42 Terminal 2·3</span>
+              <span class="badge">🎟️ 22,90 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- AEROPORT INTERNATIONAL DE NARITA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🛫</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Aéroport
+            </span>
+
+            <span class="heure-badge">
+              15h25 – 18h45
+            </span>
+
+            <strong>
+              Aéroport international de Narita
+            </strong>
+
+            <span>
+              Enregistrement des bagages, passage de la sécurité et derniers achats dans les boutiques duty-free
+            </span>
+
+            <div class="badges">
+              <span class="badge">🧳 Enregistrement</span>
+              <span class="badge">🛂 Sécurité</span>
+              <span class="badge">🛍️ Duty-free</span>
+              <span class="badge">✈️ Vol à 18h45</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- VOL RETOUR -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">✈️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Vol retour
+            </span>
+
+            <span class="heure-badge">
+              18h45
+            </span>
+
+            <strong>
+              Tokyo NRT → Montréal YUL
+            </strong>
+
+            <span>
+              Départ de Tokyo et fin du voyage en Corée du Sud & Japon 2026
+            </span>
+
+            <div class="badges">
+              <span class="badge">✈️ NRT → YUL</span>
+              <span class="badge">🇨🇦 Montréal</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour02">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Séoul
+    </div>
+
+    <h1>
+      Séoul traditionnel
+    </h1>
+
+    <div class="date">
+      Dimanche 18 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="index.html">
+        ← Jour 1
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 2 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour03.html">
+        Jour 3 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Séoul</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏯</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Palais & Insadong</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚇</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Métro + marche</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Wool Stay</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Hyehwa → Gyeongbokgung</h3>
+
+            <p>
+              Départ de Wool Stay puis métro vers le quartier des palais
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEBUT DE JOURNEE - WOOL STAY -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h00
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              Réveil et préparation pour la journée des palais
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE WOOL STAY → HYEHWA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J02-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hyehwa Station
+            </strong>
+
+            <span>
+              Wool Stay → Hyehwa 420
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO LIGNE 4 : HYEHWA → CHUNGMURO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J02-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              08h00 – 08h10
+            </span>
+
+            <strong>
+              Hyehwa 420 → Chungmuro 423
+            </strong>
+
+            <span>
+              Direction Oido
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO LIGNE 3 : CHUNGMURO → GYEONGBOKGUNG -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="4"
+          data-trajet="J02-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              08h15 – 08h25
+            </span>
+
+            <strong>
+              Chungmuro 331 → Gyeongbokgung 327
+            </strong>
+
+            <span>
+              Direction Daehwa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❸ Ligne 3</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🚪 Sortie 5</span>
+            </div>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             GYEONGBOKGUNG
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Gyeongbokgung
+            </span>
+
+            <h3>Hanbok & palais royal</h3>
+
+            <p>
+              Location d'un hanbok puis visite de Gyeongbokgung
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE GYEONGBOKGUNG STATION → HANBOKNAM -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hanboknam
+            </strong>
+
+            <span>
+              Depuis la sortie 5 de Gyeongbokgung Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- LOCATION HANBOK -->
+
+        <div class="etape etape-carte carte-boutique etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-boutique">👘</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-boutique">
+              Hanbok
+            </span>
+
+            <span class="heure-badge">
+              08h30 – 09h00
+            </span>
+
+            <strong>
+              Hanboknam
+            </strong>
+
+            <span>
+              Location du hanbok
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE HANBOKNAM → GYEONGBOKGUNG -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Gyeongbokgung
+            </strong>
+
+            <span>
+              Hanboknam → palais de Gyeongbokgung
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GYEONGBOKGUNG -->
+
+        <div class="etape etape-carte carte-palais etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-palais">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-palais">
+              Palais
+            </span>
+
+            <span class="heure-badge">
+              09h00 – 11h00
+            </span>
+
+            <strong>
+              Gyeongbokgung
+            </strong>
+
+            <div class="badges">
+              <span class="badge">💰 3 $</span>
+              <span class="badge badge-important">🥁 10h00 • Relève de la garde</span>
+            </div>
+
+            <span>
+              Relève de la garde à la porte Gwanghwamun
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RETOUR HANBOKNAM -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Hanboknam • 5 min
+            </strong>
+
+            <span>
+              11h05 – 11h25 • Rendre le hanbok
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             INSADONG
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi
+            </span>
+
+            <h3>Insadong</h3>
+
+            <p>
+              Déjeuner puis promenade entre artisanat et temple
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE HANBOKNAM → INSADONG CHON -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-trajet="J02-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <strong>
+              Hanboknam → Insadong Chon
+            </strong>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 20 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              11h50 – 12h50
+            </span>
+
+            <strong>
+              Insadong Chon
+            </strong>
+
+            <span>
+              Bibimbap
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE VERS SSAMZIEGIL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade dans Insadong
+            </strong>
+
+            <span>
+              Insadong Chon → Ssamziegil
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SSAMZIEGIL -->
+
+        <div class="etape etape-carte carte-boutique etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-boutique">🏬</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-boutique">
+              Artisanat
+            </span>
+
+            <span class="heure-badge">
+              12h50 – 13h35
+            </span>
+
+            <strong>
+              Insadong & Ssamziegil
+            </strong>
+
+            <span>
+              Boutiques, artisanat et souvenirs
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE VERS JOGYESA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Continuer vers Jogyesa
+            </strong>
+
+            <span>
+              Ssamziegil → Jogyesa
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- JOGYESA -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">☸️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <strong>
+              Jogyesa
+            </strong>
+
+            <span>
+              Temple bouddhiste au cœur d'Insadong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHANGDEOKGUNG
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Changdeokgung</h3>
+
+            <p>
+              Palais royal et visite du jardin secret Huwon
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE JOGYESA → CHANGDEOKGUNG -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-trajet="J02-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <strong>
+              Jogyesa → Changdeokgung
+            </strong>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHANGDEOKGUNG -->
+
+        <div class="etape etape-carte carte-palais etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-palais">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-palais">
+              Palais
+            </span>
+
+            <span class="heure-badge">
+              13h50 – 16h40
+            </span>
+
+            <strong>
+              Changdeokgung
+            </strong>
+
+            <div class="badges">
+              <span class="badge">💰 3 $ + 5 $</span>
+              <span class="badge badge-important">🌿 14h30 • Huwon</span>
+            </div>
+
+            <span>
+              Visite du palais puis du jardin secret
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             RETOUR VERS HYEHWA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Retour
+            </span>
+
+            <h3>Changdeokgung → Hyehwa</h3>
+
+            <p>
+              Retour en métro via Anguk et Chungmuro
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MARCHE CHANGDEOKGUNG → ANGUK -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J02-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Anguk Station
+            </strong>
+
+            <span>
+              Changdeokgung → Anguk 328
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ANGUK → CHUNGMURO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="12"
+          data-trajet="J02-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              16h50 – 17h00
+            </span>
+
+            <strong>
+              Anguk 328 → Chungmuro 331
+            </strong>
+
+            <span>
+              Direction Ogeum
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❸ Ligne 3</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHUNGMURO → HYEHWA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="13"
+          data-trajet="J02-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              17h05 – 17h15
+            </span>
+
+            <strong>
+              Chungmuro 423 → Hyehwa 420
+            </strong>
+
+            <span>
+              Direction Jinjeop
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             IHWA & NAKSAN
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi
+            </span>
+
+            <h3>Ihwa & Naksan</h3>
+
+            <p>
+              Art urbain et promenade sur les hauteurs de Séoul
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- HYEHWA → IHWA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-trajet="J02-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T14')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <strong>
+              Hyehwa → Ihwa Mural Village
+            </strong>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 15 min</span>
+            </div>
+
+            <span>
+              Montée vers Ihwa
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- IHWA -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🎨</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Art urbain
+            </span>
+
+            <span class="heure-badge">
+              17h40 – 18h30
+            </span>
+
+            <strong>
+              Ihwa Mural Village
+            </strong>
+
+            <span>
+              Ruelles et fresques
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- IHWA → NAKSAN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Continuer vers Naksan Park
+            </strong>
+
+            <span>
+              Ihwa Mural Village → Naksan Park
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAKSAN -->
+
+        <div class="etape etape-carte carte-parc etape-cliquable"
+          data-lieu="15"
+          onclick="selectionnerEtape(this); allerAuLieu(15)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-parc">🌄</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-parc">
+              Parc
+            </span>
+
+            <strong>
+              Naksan Park
+            </strong>
+
+            <span>
+              Promenade et points de vue sur Séoul
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             DINER
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Retour à Hyehwa</h3>
+
+            <p>
+              Dîner puis retour à Wool Stay
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NAKSAN → RESTAURANT -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-trajet="J02-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T16')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Marche
+            </span>
+
+            <strong>
+              Naksan Park → Hyehwa-dong Kalguksu
+            </strong>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="16"
+          onclick="selectionnerEtape(this); allerAuLieu(16)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              18h45 et +
+            </span>
+
+            <strong>
+              Hyehwa-dong Kalguksu
+            </strong>
+
+            <span>
+              Kalguksu à Hyehwa
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESTAURANT → WOOL STAY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J02-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J02-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Wool Stay • 8 min
+            </strong>
+
+            <span>
+              Hyehwa-dong Kalguksu → Wool Stay
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              41-8 Daehak-ro 11-gil, Jongno District
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

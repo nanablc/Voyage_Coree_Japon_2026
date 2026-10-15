@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour09">
+
+  <header class="entete">
+
+    <div class="destination">
+      Japon • Osaka & Himeji
+    </div>
+
+    <h1>
+      Osaka — Château de Himeji & Château d'Osaka
+    </h1>
+
+    <div class="date">
+      Dimanche 25 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour08.html">
+        ← Jour 8
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 9 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour10.html">
+        Jour 10 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+   <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Himeji & Osaka</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏯</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Himeji → Osaka Castle → Dotonbori</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚄</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Shinkansen + JR + métro</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Osaka</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+         <!-- ==================================================
+             MATIN - DEPART VERS HIMEJI
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Osaka → Himeji</h3>
+
+            <p>
+              Métro jusqu'à Shin-Osaka puis Shinkansen vers Himeji pour visiter le château
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - VALORE KITAHORIE -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h00
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              Préparation puis départ vers Shinsaibashi Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SHINSAIBASHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J09-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Shinsaibashi Station
+            </strong>
+
+            <span>
+              Valore Kitahorie → Shinsaibashi M19
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINSAIBASHI → SHIN-OSAKA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J09-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              08h00 – 08h20
+            </span>
+
+            <strong>
+              Shinsaibashi M19 → Shin-Osaka M13
+            </strong>
+
+            <span>
+              Direction Esaka
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">🚇 Midosuji Line</span>
+              <span class="badge">⏱ 20 min</span>
+              <span class="badge">🚪 Sortie 1</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIN-OSAKA → HIMEJI -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="4"
+          data-trajet="J09-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚄</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Shinkansen
+            </span>
+
+            <span class="heure-badge">
+              08h45 – 09h15
+            </span>
+
+            <strong>
+              Shin-Osaka → Himeji
+            </strong>
+
+            <span>
+              Direction Hakata / Kagoshima-Chuo
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚄 Hikari 735</span>
+              <span class="badge">JR Sanyō Shinkansen</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">🎫 JR Kansai-Hiroshima Area Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIMEJI STATION → OTEMON-MAE -->
+
+        <div class="etape etape-carte carte-bus transport etape-cliquable"
+          data-lieu="5"
+          data-trajet="J09-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T04')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-bus">🚌</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-bus">
+              Bus
+            </span>
+
+            <span class="heure-badge">
+              09h20 – 09h35
+            </span>
+
+            <strong>
+              Himeji Station → Otemon-mae
+            </strong>
+
+            <span>
+              Bus puis accès à pied au château
+            </span>
+
+            <div class="badges">
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OTEMON-MAE → HIMEJI CASTLE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J09-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Accès au château de Himeji
+            </strong>
+
+            <span>
+              Otemon-mae → Himeji Castle
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIMEJI CASTLE -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="6"
+          onclick="selectionnerEtape(this); allerAuLieu(6)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Château
+            </span>
+
+            <span class="heure-badge">
+              09h35 – 12h15
+            </span>
+
+            <strong>
+              Château de Himeji
+            </strong>
+
+            <span>
+              Visite du château puis du jardin Koko-en
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIMEJI CASTLE → KOKO-EN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="7"
+          data-trajet="J09-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T06')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Koko-en
+            </strong>
+
+            <span>
+              Himeji Castle → Koko-en Garden
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOKO-EN -->
+
+        <div class="etape etape-carte carte-jardin etape-cliquable"
+          data-lieu="7"
+          onclick="selectionnerEtape(this); allerAuLieu(7)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-jardin">🌿</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-jardin">
+              Jardin
+            </span>
+
+            <strong>
+              Koko-en Garden
+            </strong>
+
+            <span>
+              Jardin japonais situé juste à côté du château de Himeji
+            </span>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             HIMEJI → OSAKA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi
+            </span>
+
+            <h3>Himeji → Osaka</h3>
+
+            <p>
+              Déjeuner dans Miyuki-dori puis Shinkansen et trains JR vers Osaka Castle Park
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOKO-EN → MIYUKI-DORI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J09-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Miyuki-dori
+            </strong>
+
+            <span>
+              Koko-en Garden → Miyuki-dori Shopping Street
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER A HIMEJI -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h20 – 13h15
+            </span>
+
+            <strong>
+              Miyuki-dori Shopping Street
+            </strong>
+
+            <span>
+              Déjeuner sur le chemin du retour vers Himeji Station
+            </span>
+
+            <div class="badges">
+              <span class="badge">🍜 Udon</span>
+              <span class="badge">🐟 Anago</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MIYUKI-DORI → HIMEJI STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="9"
+          data-trajet="J09-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Himeji Station
+            </strong>
+
+            <span>
+              Miyuki-dori → Himeji Station
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIMEJI → SHIN-OSAKA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="10"
+          data-trajet="J09-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T09')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚄</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              Shinkansen
+            </span>
+
+            <span class="heure-badge">
+              13h45 – 14h15
+            </span>
+
+            <strong>
+              Himeji → Shin-Osaka
+            </strong>
+
+            <span>
+              Direction Tokyo / Shin-Osaka
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚄 Nozomi</span>
+              <span class="badge">JR Sanyō Shinkansen</span>
+              <span class="badge">⏱ 30 min</span>
+              <span class="badge">🎫 JR Kansai-Hiroshima Area Pass</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHIN-OSAKA → OSAKA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="11"
+          data-trajet="J09-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              14h25 – 14h30
+            </span>
+
+            <strong>
+              Shin-Osaka JR-A46 → Osaka JR-A47
+            </strong>
+
+            <span>
+              Direction Osaka / Sannomiya / Himeji
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR Kyoto Line</span>
+              <span class="badge">Rapid / Shin-Kaisoku</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OSAKA → OSAKAJO-KOEN -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="12"
+          data-trajet="J09-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              14h35 – 14h50
+            </span>
+
+            <strong>
+              Osaka JR-O11 → Osakajō-kōen JR-O07
+            </strong>
+
+            <span>
+              Direction Kyobashi / Tsuruhashi
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR Osaka Loop Line</span>
+              <span class="badge">Outer Loop / Sotomawari</span>
+              <span class="badge">⏱ 15 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- OSAKAJO-KOEN → NISHINOMARU -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="13"
+          data-trajet="J09-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T12')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Nishinomaru Garden
+            </strong>
+
+            <span>
+              Osakajō-kōen Station → Nishinomaru Garden
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- NISHINOMARU GARDEN -->
+
+        <div class="etape etape-carte carte-jardin etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-jardin">🌿</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-jardin">
+              Jardin
+            </span>
+
+            <span class="heure-badge">
+              15h10 – 15h50
+            </span>
+
+            <strong>
+              Nishinomaru Garden
+            </strong>
+
+            <span>
+              Jardin situé à l'ouest du château avec vue sur le Tenshukaku
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 2,70 $</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             CHATEAU D'OSAKA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Osaka Castle Park</h3>
+
+            <p>
+              Jardin Nishinomaru puis visite du Tenshukaku avant le retour vers Shinsaibashi
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NISHINOMARU → TENSHUKAKU -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="14"
+          data-trajet="J09-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers le Tenshukaku • 15 min
+            </strong>
+
+            <span>
+              Nishinomaru Garden → Osaka Castle Tenshukaku
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHATEAU D'OSAKA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Château
+            </span>
+
+            <span class="heure-badge">
+              16h05 – 17h30
+            </span>
+
+            <strong>
+              Château d'Osaka
+            </strong>
+
+            <span>
+              Visite du Tenshukaku et panorama depuis le château
+            </span>
+
+            <div class="badges">
+              <span class="badge">💳 10,50 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TENSHUKAKU → MORINOMIYA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J09-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Morinomiya Station
+            </strong>
+
+            <span>
+              Osaka Castle Tenshukaku → Morinomiya N20
+            </span>
+
+            <div class="badges">
+              <span class="badge">🚋 Electric car disponible si fatigue</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MORINOMIYA → SHINSAIBASHI -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="16"
+          data-trajet="J09-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              17h45 – 18h00
+            </span>
+
+            <strong>
+              Morinomiya N20 → Shinsaibashi N15
+            </strong>
+
+            <span>
+              Direction Taisho
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">
+                🚇 Nagahori Tsurumi-ryokuchi Line
+              </span>
+
+              <span class="badge">
+                ⏱ 15 min
+              </span>
+
+              <span class="badge">
+                🚪 Sortie 14
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+         <!-- ==================================================
+             SOIREE - SHINSAIBASHI & DOTONBORI
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Shinsaibashi & Dotonbori</h3>
+
+            <p>
+              Découverte de Dotonbori, Ebisubashi et Shinsaibashi-Suji puis dîner dans le quartier
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINSAIBASHI → DOTONBORI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="17"
+          data-trajet="J09-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Dotonbori
+            </strong>
+
+            <span>
+              Shinsaibashi Station → Dotonbori
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DOTONBORI -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🌃</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier
+            </span>
+
+            <span class="heure-badge">
+              18h00 et +
+            </span>
+
+            <strong>
+              Dotonbori
+            </strong>
+
+            <span>
+              Découverte du quartier, enseignes lumineuses et promenade le long du canal
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DOTONBORI → EBISUBASHI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="18"
+          data-trajet="J09-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers Ebisubashi
+            </strong>
+
+            <span>
+              Quai de Dotonbori → Pont d'Ebisubashi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- EBISUBASHI BRIDGE -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="18"
+          onclick="selectionnerEtape(this); allerAuLieu(18)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🌉</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Pont
+            </span>
+
+            <strong>
+              Ebisubashi Bridge
+            </strong>
+
+            <span>
+              Vue emblématique sur le canal de Dotonbori et les enseignes lumineuses
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- EBISUBASHI → SHINSAIBASHI-SUJI -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="19"
+          data-trajet="J09-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Promenade vers Shinsaibashi-Suji
+            </strong>
+
+            <span>
+              Ebisubashi Bridge → Shinsaibashi-Suji
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINSAIBASHI-SUJI -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="19"
+          onclick="selectionnerEtape(this); allerAuLieu(19)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Rue commerçante
+            </span>
+
+            <strong>
+              Shinsaibashi-Suji
+            </strong>
+
+            <span>
+              Promenade dans la grande galerie commerçante couverte de Shinsaibashi
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SHINSAIBASHI-SUJI → WANAKA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="20"
+          data-trajet="J09-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T19')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Takoyaki Wanaka
+            </strong>
+
+            <span>
+              Shinsaibashi-Suji → Takoyaki Wanaka
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TAKOYAKI WANAKA -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="20"
+          onclick="selectionnerEtape(this); allerAuLieu(20)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🐙</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Suggestion
+            </span>
+
+            <strong>
+              Takoyaki Wanaka
+            </strong>
+
+            <span>
+              Takoyaki pendant la découverte de Dotonbori et Shinsaibashi
+            </span>
+
+            <div class="badges">
+              <span class="badge">🐙 Takoyaki</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- WANAKA → HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="21"
+          data-trajet="J09-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J09-T20')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Valore Kitahorie
+            </strong>
+
+            <span>
+              Takoyaki Wanaka → hôtel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="21"
+          onclick="selectionnerEtape(this); allerAuLieu(21)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Valore Kitahorie
+            </strong>
+
+            <span>
+              1-chōme-5 Kitahorie, Nishi Ward, Osaka
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

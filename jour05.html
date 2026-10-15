@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-jour="jour05">
+
+  <header class="entete">
+
+    <div class="destination">
+      Corée du Sud • Séoul
+    </div>
+
+    <h1>
+      Séoul moderne — Dongdaemun, Gangnam & Hongdae
+    </h1>
+
+    <div class="date">
+      Mercredi 21 octobre 2026
+    </div>
+
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour04.html">
+        ← Jour 4
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 5 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour06.html">
+        Jour 6 →
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Séoul</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🏙️</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Séoul moderne</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚇</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>Métro + marche</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Wool Stay</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+                  <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Hyehwa → Bukchon</h3>
+
+            <p>
+              Départ de Wool Stay puis trajet vers Bukchon Hanok Village
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEBUT DE JOURNEE - WOOL STAY -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              08h00
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              Préparation puis départ pour Bukchon Hanok Village
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- WOOL STAY → HYEHWA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J05-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hyehwa Station • 5 min
+            </strong>
+
+            <span>
+              Wool Stay → Hyehwa 420
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- METRO HYEHWA → CHUNGMURO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="3"
+          data-trajet="J05-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h15 – 09h25
+            </span>
+
+            <strong>
+              Hyehwa 420 → Chungmuro 423
+            </strong>
+
+            <span>
+              Direction Oido
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHUNGMURO → ANGUK -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="4"
+          data-trajet="J05-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              09h30 – 09h40
+            </span>
+
+            <strong>
+              Chungmuro 331 → Anguk 328
+            </strong>
+
+            <span>
+              Direction Daehwa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❸ Ligne 3</span>
+              <span class="badge">⏱ 10 min</span>
+              <span class="badge">🚪 Sortie 2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ANGUK → BUKCHON -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche jusqu'à Bukchon • 20 min
+            </strong>
+
+            <span>
+              Anguk Station → Bukchon Hanok Village
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BUKCHON HANOK VILLAGE -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🏘️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier traditionnel
+            </span>
+
+            <span class="heure-badge">
+              10h00 – 11h15
+            </span>
+
+            <strong>
+              Bukchon Hanok Village
+            </strong>
+
+            <span>
+              Maisons traditionnelles et ruelles de Gahoe-dong
+            </span>
+
+          </div>
+
+        </div>
+
+
+          <!-- BUKCHON → ANGUK -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J05-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Anguk Station • 15 min
+            </strong>
+
+            <span>
+              Bukchon Hanok Village → Anguk 328
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ANGUK → CHUNGMURO -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="7"
+          data-trajet="J05-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              11h30 – 11h40
+            </span>
+
+            <strong>
+              Anguk 328 → Chungmuro 331
+            </strong>
+
+            <span>
+              Direction Ogeum
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❸ Ligne 3</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHUNGMURO → DDP -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="8"
+          data-trajet="J05-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T07')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              11h45 – 11h50
+            </span>
+
+            <strong>
+              Chungmuro 423 → Dongdaemun History & Culture Park 422
+            </strong>
+
+            <span>
+              Direction Oido
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             DONGDAEMUN
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Midi
+            </span>
+
+            <h3>Dongdaemun & DDP</h3>
+
+            <p>
+              Architecture moderne, Cheonggyecheon puis déjeuner au DDP
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- STATION → DDP -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T08')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Dongdaemun Design Plaza • 10 min
+            </strong>
+
+            <span>
+              Dongdaemun History & Culture Park → DDP
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DONGDAEMUN DESIGN PLAZA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏙️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Architecture
+            </span>
+
+            <span class="heure-badge">
+              12h00 – 13h10
+            </span>
+
+            <strong>
+              Dongdaemun Design Plaza (DDP)
+            </strong>
+
+            <span>
+              Visite du DDP et passage au Cheonggyecheon
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEJEUNER AU DDP -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              13h10 – 14h00
+            </span>
+
+            <strong>
+              Déjeuner au DDP
+            </strong>
+
+            <span>
+              Restaurant dans Dongdaemun Design Plaza
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DDP → STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J05-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre la station • 5 min
+            </strong>
+
+            <span>
+              DDP → Dongdaemun History & Culture Park 205
+            </span>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             GANGNAM & COEX
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Dongdaemun → Gangnam</h3>
+
+            <p>
+              Bongeunsa puis découverte de COEX et de Starfield Library
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DDP → SAMSEONG -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="12"
+          data-trajet="J05-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T10')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              14h05 – 14h35
+            </span>
+
+            <strong>
+              Dongdaemun History & Culture Park 205 → Samseong 219
+            </strong>
+
+            <span>
+              Direction Seongsu
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❷ Ligne 2</span>
+              <span class="badge">⏱ 30 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SAMSEONG → BONGEUNSA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T11')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche jusqu'à Bongeunsa • 15 min
+            </strong>
+
+            <span>
+              Samseong Station → Bongeunsa
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BONGEUNSA -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🛕</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              14h50 – 15h40
+            </span>
+
+            <strong>
+              Bongeunsa
+            </strong>
+
+            <span>
+              Maitreya Buddha, Daeungjeon, Panjeon et Jongru
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- BONGEUNSA → COEX -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T12')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers COEX • 10 min
+            </strong>
+
+            <span>
+              Bongeunsa → Gangnam & COEX
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GANGNAM & COEX -->
+
+        <div class="etape etape-carte carte-centrecommercial etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-centrecommercial">📚</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-centrecommercial">
+              Gangnam & COEX
+            </span>
+
+            <span class="heure-badge">
+              15h50 – 17h20
+            </span>
+
+            <strong>
+              Starfield COEX Mall
+            </strong>
+
+            <span>
+              Starfield Library, COEX Mall et Gangnam Style Statue
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- COEX → SAMSEONG -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J05-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T13')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Samseong Station • 5 min
+            </strong>
+
+            <span>
+              COEX → Samseong 219
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SAMSEONG → HONGIK UNIVERSITY -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="16"
+          data-trajet="J05-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T14')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <span class="heure-badge">
+              17h25 – 18h10
+            </span>
+
+            <strong>
+              Samseong 219 → Hongik University 239
+            </strong>
+
+            <span>
+              Direction Hongik University
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❷ Ligne 2</span>
+              <span class="badge">⏱ 45 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ==================================================
+             HONGDAE & YEONNAM-DONG
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Soir
+            </span>
+
+            <h3>Hongdae & Yeonnam-dong</h3>
+
+            <p>
+              Quartiers animés, boutiques, promenade puis dîner à Hongdae
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- HONGIK UNIVERSITY → HONGDAE -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T15')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Marche vers Hongdae • 5 min
+            </strong>
+
+            <span>
+              Hongik University Station → Hongdae & Yeonnam-dong
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HONGDAE & YEONNAM-DONG -->
+
+        <div class="etape etape-carte carte-quartier etape-cliquable"
+          data-lieu="17"
+          onclick="selectionnerEtape(this); allerAuLieu(17)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-quartier">🛍️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-quartier">
+              Quartier
+            </span>
+
+            <span class="heure-badge">
+              18h15 – 20h15
+            </span>
+
+            <strong>
+              Hongdae & Yeonnam-dong
+            </strong>
+
+            <span>
+              Boutiques, rues animées et promenade
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HONGDAE → RESTAURANT -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T16')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+				Rejoindre Korean BBQ Chicken Dakjang Beer
+			</strong>
+
+			<span>
+				Hongdae & Yeonnam-dong → restaurant
+			</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DINER A HONGDAE -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="18"
+          onclick="selectionnerEtape(this); allerAuLieu(18)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Dîner
+            </span>
+
+            <span class="heure-badge">
+              20h15 et +
+            </span>
+
+        <strong>
+			Korean BBQ Chicken Dakjang Beer Hongdae
+		</strong>
+
+		<span>
+			Dîner à Hongdae
+		</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESTAURANT → HONGIK UNIVERSITY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="19"
+          data-trajet="J05-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T17')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Hongik University Station
+            </strong>
+
+            <span>
+              Restaurant → Hongik University 239
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             RETOUR A HYEHWA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Retour
+            </span>
+
+            <h3>Hongdae → Hyehwa</h3>
+
+            <p>
+              Retour en métro avec correspondance à Dongdaemun History & Culture Park
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- HONGIK UNIVERSITY → DDP -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="20"
+          data-trajet="J05-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T18')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <strong>
+              Hongik University 239 → Dongdaemun History & Culture Park 205
+            </strong>
+
+            <span>
+              Direction City Hall / Euljiro
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❷ Ligne 2</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- DDP → HYEHWA -->
+
+        <div class="etape etape-carte carte-metro transport transport-metro etape-cliquable"
+          data-lieu="21"
+          data-trajet="J05-T19"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T19')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-metro">🚇</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-metro">
+              Métro
+            </span>
+
+            <strong>
+              Dongdaemun History & Culture Park 422 → Hyehwa 420
+            </strong>
+
+            <span>
+              Direction Jinjeop
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-metro">❹ Ligne 4</span>
+              <span class="badge">🚪 Sortie 4</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HYEHWA → WOOL STAY -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-trajet="J05-T20"
+          onclick="selectionnerEtape(this); allerAuTrajet('J05-T20')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour à Wool Stay • 5 min
+            </strong>
+
+            <span>
+              Hyehwa Station → Wool Stay
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="22"
+          onclick="selectionnerEtape(this); allerAuLieu(22)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Wool Stay
+            </strong>
+
+            <span>
+              41-8 Daehak-ro 11-gil, Jongno District
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

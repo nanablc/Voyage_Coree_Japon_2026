@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Corée du Sud & Japon 2026</title>
+
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+
+  <!-- Styles du voyage -->
+
+  <link rel="stylesheet" href="css/style.css?v=10-06-01">
+
+</head>
+
+<body data-jour="jour19">
+
+  <header class="entete">
+
+    <div class="destination">
+      Japon • Kamakura & Enoshima
+    </div>
+
+    <h1>
+      Kamakura & Enoshima — sanctuaires, Daibutsu & côte du Shōnan
+    </h1>
+
+    <div class="date">
+      Mercredi 4 novembre 2026
+    </div>
+
+    <nav class="navigation-jours">
+
+      <a class="nav-jour" href="jour18.html">
+        ← Jour 18
+      </a>
+
+      <span class="compteur-jour">
+        JOUR 19 / 22
+      </span>
+
+      <a class="nav-jour nav-suivant" href="jour20.html">
+        Jour 20 →
+      </a>
+
+    </nav>
+
+  </header>
+
+  <section class="resume-journee">
+
+    <div class="resume-item">
+      <span class="resume-icone">📍</span>
+
+      <div>
+        <span class="resume-label">Destination</span>
+        <strong>Tokyo → Kamakura → Enoshima</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">⛩️</span>
+
+      <div>
+        <span class="resume-label">Journée</span>
+        <strong>Tsurugaoka Hachimangu → Daibutsu → Hase-dera → Enoshima</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🚋</span>
+
+      <div>
+        <span class="resume-label">Transport principal</span>
+        <strong>JR Yamanote + Shōnan-Shinjuku / Yokosuka + Enoden</strong>
+      </div>
+    </div>
+
+
+    <div class="resume-item">
+      <span class="resume-icone">🛏️</span>
+
+      <div>
+        <span class="resume-label">Nuit</span>
+        <strong>Road Papk Hotel • Sugamo</strong>
+      </div>
+    </div>
+
+  </section>
+
+  <main class="contenu">
+
+    <div class="grille-journee">
+
+      <section class="carte-section">
+        <div id="map"></div>
+      </section>
+
+      <section class="programme">
+
+        <h2>Programme de la journée</h2>
+  
+          <!-- ==================================================
+             MATIN - SUGAMO → KAMAKURA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Matin
+            </span>
+
+            <h3>Sugamo → Kamakura</h3>
+
+            <p>
+              JR Yamanote jusqu'à Ikebukuro puis JR Shōnan-Shinjuku / Yokosuka Line vers Kamakura
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEPART - ROAD PAPK HOTEL -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="1"
+          onclick="selectionnerEtape(this); allerAuLieu(1)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Départ
+            </span>
+
+            <span class="heure-badge">
+              07h30
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HOTEL → SUGAMO STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="2"
+          data-trajet="J19-T01"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T01')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Sugamo Station
+            </strong>
+
+            <span>
+              Road Papk Hotel → Sugamo JY11
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → IKEBUKURO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="3"
+          data-trajet="J19-T02"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T02')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              08h30 – 08h35
+            </span>
+
+            <strong>
+              Sugamo JY11 → Ikebukuro JY13
+            </strong>
+
+            <span>
+              Outer Loop / Gaimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IKEBUKURO → KAMAKURA -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="4"
+          data-trajet="J19-T03"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T03')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              08h45 – 09h45
+            </span>
+
+            <strong>
+              Ikebukuro JS21 → Kamakura JS07 / JO07
+            </strong>
+
+            <span>
+              Direction Zushi
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR Shōnan-Shinjuku Line / Yokosuka Line</span>
+              <span class="badge">🚉 Local / Futsu</span>
+              <span class="badge">⏱ 1 h</span>
+              <span class="badge">🚪 Sortie Est</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KAMAKURA STATION → TSURUGAOKA HACHIMANGU -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="5"
+          data-trajet="J19-T04"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T04')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Tsurugaoka Hachimangu
+            </strong>
+
+            <span>
+              Kamakura Station • Sortie Est → Tsurugaoka Hachimangu
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TSURUGAOKA HACHIMANGU -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="5"
+          onclick="selectionnerEtape(this); allerAuLieu(5)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Sanctuaire
+            </span>
+
+            <span class="heure-badge">
+              09h45 – 10h35
+            </span>
+
+            <strong>
+              Tsurugaoka Hachimangu
+            </strong>
+
+            <span>
+              Visite du grand sanctuaire shinto de Kamakura
+            </span>
+
+            <div class="badges">
+              <span class="badge">⛩️ Sanctuaire shinto</span>
+              <span class="badge">🏯 Kamakura</span>
+            </div>
+
+          </div>
+
+        </div>
+		
+          <!-- ==================================================
+             FIN DE MATINEE & MIDI - KAMAKURA → HASE
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin de matinée & midi
+            </span>
+
+            <h3>Kamakura → Hase</h3>
+
+            <p>
+              Train rétro Enoden vers Hase, visite du Grand Bouddha de Kōtoku-in et de Hase-dera puis déjeuner
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- TSURUGAOKA HACHIMANGU → ENODEN KAMAKURA -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="6"
+          data-trajet="J19-T05"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T05')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Enoden Kamakura
+            </strong>
+
+            <span>
+              Tsurugaoka Hachimangu → Enoden Kamakura EN15
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENODEN KAMAKURA → HASE -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="7"
+          data-trajet="J19-T06"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T06')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Enoden
+            </span>
+
+            <span class="heure-badge">
+              10h40 – 10h50
+            </span>
+
+            <strong>
+              Kamakura EN15 → Hase EN12
+            </strong>
+
+            <span>
+              Direction Fujisawa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Enoden</span>
+              <span class="badge">🚃 Train rétro</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HASE STATION → KOTOKU-IN -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="8"
+          data-trajet="J19-T07"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T07')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Kōtoku-in
+            </strong>
+
+            <span>
+              Hase EN12 → Kōtoku-in
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOTOKU-IN -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="8"
+          onclick="selectionnerEtape(this); allerAuLieu(8)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              10h55 – 12h30
+            </span>
+
+            <strong>
+              Kōtoku-in
+            </strong>
+
+            <span>
+              Visite du célèbre Daibutsu, le Grand Bouddha de Kamakura
+            </span>
+
+            <div class="badges">
+              <span class="badge">🪷 Daibutsu</span>
+              <span class="badge">🎟️ 2,70 $</span>
+              <span class="badge">⏱ Avec Hase-dera</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- KOTOKU-IN → HASE-DERA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="9"
+          data-trajet="J19-T08"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T08')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Visite
+            </span>
+
+            <strong>
+              Kōtoku-in → Hase-dera
+            </strong>
+
+            <span>
+              Marche entre les deux temples de Hase
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HASE-DERA -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="9"
+          onclick="selectionnerEtape(this); allerAuLieu(9)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">🏯</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Temple
+            </span>
+
+            <span class="heure-badge">
+              10h55 – 12h30
+            </span>
+
+            <strong>
+              Hase-dera
+            </strong>
+
+            <span>
+              Visite du temple de Hase dans le même créneau que Kōtoku-in
+            </span>
+
+            <div class="badges">
+              <span class="badge">🏯 Temple bouddhiste</span>
+              <span class="badge">🌊 Vue sur Kamakura</span>
+              <span class="badge">🎟️ 3,55 $</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HASE-DERA → HASE SHOKUDO -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="10"
+          data-trajet="J19-T09"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T09')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Rejoindre Hase Shokudo
+            </strong>
+
+            <span>
+              Hase-dera → Hase Shokudo
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HASE SHOKUDO -->
+
+        <div class="etape etape-carte carte-repas etape-cliquable"
+          data-lieu="10"
+          onclick="selectionnerEtape(this); allerAuLieu(10)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-repas">🍽️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-repas">
+              Déjeuner
+            </span>
+
+            <span class="heure-badge">
+              12h30 – 13h30
+            </span>
+
+            <strong>
+              Hase Shokudo
+            </strong>
+
+            <span>
+              Déjeuner à Hase avant de reprendre l'Enoden vers Enoshima
+            </span>
+
+          </div>
+
+        </div>
+		
+         <!-- ==================================================
+             APRES-MIDI - HASE → ENOSHIMA
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Après-midi
+            </span>
+
+            <h3>Hase → Enoshima</h3>
+
+            <p>
+              Enoden le long de la côte puis découverte de l'île d'Enoshima et de son sanctuaire
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- HASE SHOKUDO → HASE STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="11"
+          data-trajet="J19-T10"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T10')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Hase Station
+            </strong>
+
+            <span>
+              Hase Shokudo → Hase EN12
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- HASE → ENOSHIMA -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="12"
+          data-trajet="J19-T11"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T11')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Enoden
+            </span>
+
+            <span class="heure-badge">
+              13h35 – 14h00
+            </span>
+
+            <strong>
+              Hase EN12 → Enoshima EN06
+            </strong>
+
+            <span>
+              Direction Fujisawa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Enoden</span>
+              <span class="badge">🚃 Train rétro</span>
+              <span class="badge">⏱ 25 min</span>
+              <span class="badge">🌊 Côte du Shōnan</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENOSHIMA STATION → ILE D'ENOSHIMA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="13"
+          data-trajet="J19-T12"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T12')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Promenade
+            </span>
+
+            <strong>
+              Enoshima Station → Île d'Enoshima
+            </strong>
+
+            <span>
+              Marche vers l'île et traversée du pont
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🌉 Traversée du pont</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ILE D'ENOSHIMA -->
+
+        <div class="etape etape-carte carte-site etape-cliquable"
+          data-lieu="13"
+          onclick="selectionnerEtape(this); allerAuLieu(13)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-site">🏝️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-site">
+              Île
+            </span>
+
+            <span class="heure-badge">
+              14h00 – 16h00
+            </span>
+
+            <strong>
+              Île d'Enoshima
+            </strong>
+
+            <span>
+              Promenade sur l'île, découverte du littoral et vues sur l'océan
+            </span>
+
+            <div class="badges">
+              <span class="badge">🏝️ Enoshima</span>
+              <span class="badge">🌊 Océan</span>
+              <span class="badge">📸 Panorama</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ILE D'ENOSHIMA → ENOSHIMA-JINJA -->
+
+        <div class="etape etape-carte carte-marche transport transport-marche etape-cliquable"
+          data-lieu="14"
+          data-trajet="J19-T13"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T13')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-marche">🚶</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-marche">
+              Visite
+            </span>
+
+            <strong>
+              Île d'Enoshima → Enoshima-jinja
+            </strong>
+
+            <span>
+              Promenade à travers l'île jusqu'au sanctuaire
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-marche">🚶 À pied</span>
+              <span class="badge">🏝️ Enoshima</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENOSHIMA-JINJA -->
+
+        <div class="etape etape-carte carte-temple etape-cliquable"
+          data-lieu="14"
+          onclick="selectionnerEtape(this); allerAuLieu(14)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-temple">⛩️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-temple">
+              Sanctuaire
+            </span>
+
+            <span class="heure-badge">
+              14h00 – 16h00
+            </span>
+
+            <strong>
+              Enoshima-jinja
+            </strong>
+
+            <span>
+              Visite du sanctuaire pendant la découverte de l'île d'Enoshima
+            </span>
+
+            <div class="badges">
+              <span class="badge">⛩️ Sanctuaire shinto</span>
+              <span class="badge">🏝️ Enoshima</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENOSHIMA-JINJA → ENOSHIMA STATION -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="15"
+          data-trajet="J19-T14"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T14')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour vers Enoshima Station
+            </strong>
+
+            <span>
+              Enoshima-jinja → Enoshima EN06
+            </span>
+
+          </div>
+
+        </div>
+
+
+         <!-- ==================================================
+             FIN D'APRES-MIDI & SOIREE - ENOSHIMA → TOKYO
+             ================================================== -->
+
+        <div class="section-programme">
+
+          <div class="section-programme-contenu">
+
+            <span class="section-programme-label">
+              Fin d'après-midi & soirée
+            </span>
+
+            <h3>Enoshima → Fujisawa → Tokyo</h3>
+
+            <p>
+              Dernier trajet en Enoden jusqu'à Fujisawa puis retour à Sugamo par JR Shōnan-Shinjuku et Yamanote
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ENOSHIMA → FUJISAWA -->
+
+        <div class="etape etape-carte carte-tram transport transport-tram etape-cliquable"
+          data-lieu="16"
+          data-trajet="J19-T15"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T15')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-tram">🚋</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-tram">
+              Enoden
+            </span>
+
+            <span class="heure-badge">
+              16h10 – 16h20
+            </span>
+
+            <strong>
+              Enoshima EN06 → Fujisawa EN01
+            </strong>
+
+            <span>
+              Direction Fujisawa
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-tram">🚋 Enoden</span>
+              <span class="badge">🚃 Train rétro</span>
+              <span class="badge">⏱ 10 min</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FUJISAWA → IKEBUKURO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="17"
+          data-trajet="J19-T16"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T16')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚆</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              16h30 – 17h25
+            </span>
+
+            <strong>
+              Fujisawa JS10 → Ikebukuro JS21
+            </strong>
+
+            <span>
+              Direction Omiya / Takasaki
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚆 JR Shōnan-Shinjuku Line</span>
+              <span class="badge">🚉 Local / Futsu</span>
+              <span class="badge">⏱ 55 min</span>
+              <span class="badge">🔄 Correspondance Enoden → JR</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- IKEBUKURO → SUGAMO -->
+
+        <div class="etape etape-carte carte-train transport transport-train etape-cliquable"
+          data-lieu="18"
+          data-trajet="J19-T17"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T17')">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-train">🚈</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-train">
+              JR
+            </span>
+
+            <span class="heure-badge">
+              17h30 – 17h35
+            </span>
+
+            <strong>
+              Ikebukuro JY13 → Sugamo JY11
+            </strong>
+
+            <span>
+              Inner Loop / Uchimawari
+            </span>
+
+            <div class="badges">
+              <span class="badge badge-train">🚈 JR Yamanote Line</span>
+              <span class="badge">⏱ 5 min</span>
+              <span class="badge">🔄 Correspondance à Ikebukuro</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUGAMO → ROAD PAPK HOTEL -->
+
+        <div class="etape-liaison etape-cliquable"
+          data-lieu="19"
+          data-trajet="J19-T18"
+          onclick="selectionnerEtape(this); allerAuTrajet('J19-T18')">
+
+          <div class="liaison-icone">
+            🚶
+          </div>
+
+          <div class="liaison-contenu">
+
+            <strong>
+              Retour au Road Papk Hotel
+            </strong>
+
+            <span>
+              Sugamo JY11 → Road Papk Hotel
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROAD PAPK HOTEL - NUIT -->
+
+        <div class="etape etape-carte carte-hotel etape-cliquable"
+          data-lieu="19"
+          onclick="selectionnerEtape(this); allerAuLieu(19)">
+
+          <div class="heure">
+            <span class="pastille-etape pastille-hotel">🛏️</span>
+          </div>
+
+          <div class="details">
+
+            <span class="type-etape type-hotel">
+              Hébergement
+            </span>
+
+            <strong>
+              Road Papk Hotel
+            </strong>
+
+            <span>
+              3 Chome-2-16 Sugamo, Toshima City, Tokyo 170-0002
+            </span>
+
+          </div>
+
+        </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application du voyage -->
+  <script src="js/app.js?v=10-06-01"></script>
+
+</body>
+
+</html>
