@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"name": "lieux_japon",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": "J08-J-L01", "Ordre": 1, "Nom": "Kansai International Airport", "Type": "Aeroport", "SousType": "Aeroport", "Ref": "KIX", "Note": "Arrivée au Japon depuis Busan" }, "geometry": { "type": "Point", "coordinates": [ 135.244430131860184, 34.434954378571383 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L03", "Ordre": 3, "Nom": "Namba Station - Nankai", "Type": "Gare", "SousType": "Station", "Ref": "NK32", "Note": "Gare Nankai de l'aéroport" }, "geometry": { "type": "Point", "coordinates": [ 135.50177205074877, 34.663662655361584 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L02", "Ordre": 2, "Nom": "Kansai Airport Station", "Type": "Gare", "SousType": "Station", "Ref": "NK01", "Note": "Arrivée du Rapi:t ou Airport Express" }, "geometry": { "type": "Point", "coordinates": [ 135.243410096609864, 34.435937843884169 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L04", "Ordre": 4, "Nom": "Namba Station - Yotsubashi Line", "Type": "Metro", "SousType": "Station", "Ref": "Y15", "Note": "Option métro si fatigue" }, "geometry": { "type": "Point", "coordinates": [ 135.4975972, 34.666331801756691 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L05", "Ordre": 5, "Nom": "Yotsubashi Station", "Type": "Metro", "SousType": "Station", "Ref": "Y14", "Note": "Station proche de l'hôtel" }, "geometry": { "type": "Point", "coordinates": [ 135.4967532, 34.674038399377878 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L06", "Ordre": 6, "Nom": "Valore Kitahorie", "Type": "Hotel", "SousType": "Hebergement", "Ref": null, "Note": "Installation à l'hôtel" }, "geometry": { "type": "Point", "coordinates": [ 135.49625424362938, 34.673718043995045 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L07", "Ordre": 7, "Nom": "Yotsubashi Station", "Type": "Metro", "SousType": "Station", "Ref": "Y14", "Note": "Départ vers Umeda" }, "geometry": { "type": "Point", "coordinates": [ 135.4967532, 34.674038399377878 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L08", "Ordre": 8, "Nom": "Nishi-Umeda Station", "Type": "Metro", "SousType": "Station", "Ref": "Y11", "Note": "Ligne Yotsubashi" }, "geometry": { "type": "Point", "coordinates": [ 135.495645325218732, 34.699480665510201 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L09", "Ordre": 9, "Nom": "Umeda Sky Building", "Type": "Observatoire", "SousType": "Observatoire", "Ref": null, "Note": "Observatoire Kuchu Teien" }, "geometry": { "type": "Point", "coordinates": [ 135.490145444119491, 34.704574543466528 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L10", "Ordre": 10, "Nom": "Kiji - Takimi-koji", "Type": "Restaurant", "SousType": "Restaurant", "Ref": null, "Note": "Dîner, okonomiyaki" }, "geometry": { "type": "Point", "coordinates": [ 135.490757324616112, 34.7046542986186 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L11", "Ordre": 11, "Nom": "HEP FIVE", "Type": "CentreCommercial", "SousType": "CentreCommercial", "Ref": null, "Note": "Option : grande roue" }, "geometry": { "type": "Point", "coordinates": [ 135.500498906275993, 34.704054866165897 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L12", "Ordre": 12, "Nom": "Gate Tower Building", "Type": "Site", "SousType": "Batiment", "Ref": null, "Note": "Option si énergie restante" }, "geometry": { "type": "Point", "coordinates": [ 135.49046804014057, 34.697346908472362 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L13", "Ordre": 13, "Nom": "Nishi-Umeda Station", "Type": "Metro", "SousType": "Station", "Ref": "Y11", "Note": "Retour vers Kitahorie" }, "geometry": { "type": "Point", "coordinates": [ 135.495645325218732, 34.699480665510201 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L14", "Ordre": 14, "Nom": "Yotsubashi Station", "Type": "Metro", "SousType": "Station", "Ref": "Y14", "Note": "Arrivée, sortie 6" }, "geometry": { "type": "Point", "coordinates": [ 135.4967532, 34.674038399377878 ] } },
+{ "type": "Feature", "properties": { "ID": "J08-J-L15", "Ordre": 15, "Nom": "Valore Kitahorie", "Type": "Hotel", "SousType": "Hebergement", "Ref": null, "Note": "Nuit à Osaka" }, "geometry": { "type": "Point", "coordinates": [ 135.49625424362938, 34.673718043995045 ] } }
+]
+}
