@@ -1,5 +1,5 @@
 const CACHE_NAME =
-  "voyage-coree-japon-v1";
+  "voyage-coree-japon-v2";
 
 
 // ======================================================
@@ -65,6 +65,10 @@ const fichiers = [
 // INSTALLATION
 // ======================================================
 
+// ======================================================
+// INSTALLATION
+// ======================================================
+
 self.addEventListener(
   "install",
   function(event) {
@@ -78,50 +82,17 @@ self.addEventListener(
             CACHE_NAME
           );
 
-
-        // Chaque fichier est traité séparément :
-        // un éventuel fichier absent ne bloque
-        // pas toute l'installation.
-
-        await Promise.allSettled(
-
-          fichiers.map(
-            async function(url) {
-
-              try {
-
-                const response =
-                  await fetch(
-                    url,
-                    {
-                      cache: "reload"
-                    }
-                  );
-
-
-                if (response.ok) {
-
-                  await cache.put(
-                    url,
-                    response
-                  );
-
-                }
-
-              } catch (error) {
-
-                console.warn(
-                  "Non mis en cache :",
-                  url
-                );
-
-              }
-
-            }
-          )
-
+        console.log(
+          "Téléchargement du voyage pour utilisation hors ligne..."
         );
 
+        await cache.addAll(
+          fichiers
+        );
+
+        console.log(
+          "Toutes les journées sont disponibles hors ligne."
+        );
 
         await self.skipWaiting();
 
